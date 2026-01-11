@@ -2165,5 +2165,440 @@ export const QUESTIONS: Question[] = [
       { id: 'w105c', text: 'Great Southern', isCorrect: false, feedback: 'Riesling/Cabernet.' },
       { id: 'w105d', text: 'Rutherglen', isCorrect: true, feedback: 'Correct.' }
     ]
+  },
+  {
+    id: 'wset_viti_risk_false',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which one of the following statements is FALSE?',
+    explanationText: 'In areas of low water availability, vines are planted at low densities to ensure each vine has access to sufficient water from the soil. High density is used in regions with high nutrients and water to create competition.',
+    mentalMapText: 'Viticulture -> Vineyard Management',
+    options: [
+      { id: 'v1a', text: 'An entire crop in a vineyard can be destroyed by hail', isCorrect: false, feedback: 'True statement.' },
+      { id: 'v1b', text: 'The risk of sunburnt grapes can be reduced by the use of canopy management', isCorrect: false, feedback: 'True statement.' },
+      { id: 'v1c', text: 'Grape vines can be killed by winter freeze', isCorrect: false, feedback: 'True statement.' },
+      { id: 'v1d', text: 'A grape grower will plant vines at high densities in areas of low water availability', isCorrect: true, feedback: 'Correct (this is False). Low water requires low density.' }
+    ]
+  },
+  {
+    id: 'wset_viti_irrigation',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which one of the following statements is TRUE regarding irrigation?',
+    explanationText: 'Sprinklers can provide frost protection by releasing latent heat as water freezes on the vines. Drip irrigation is the most expensive to install but efficient for water use.',
+    mentalMapText: 'Viticulture -> Irrigation',
+    options: [
+      { id: 'v2a', text: 'Sprinklers can reduce the risk of disease', isCorrect: false, feedback: 'Sprinklers increase humidity and rot risk.' },
+      { id: 'v2b', text: 'Drip irrigation is the cheapest option', isCorrect: false, feedback: 'It is the most expensive to install.' },
+      { id: 'v2c', text: 'Flood irrigation is used on the steep slopes of the Mosel', isCorrect: false, feedback: 'Flood irrigation requires flat land.' },
+      { id: 'v2d', text: 'Sprinklers, if correctly designed can be used for frost protection', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_viti_spring_frost',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which of the following can be used in a vineyard as protection against spring frost? (1. Sprinklers 2. Heaters 3. Wind machines 4. Netting)',
+    explanationText: 'Sprinklers, heaters, and wind machines (which pull down warm air) are all frost protection methods. Netting is used for birds or hail.',
+    mentalMapText: 'Viticulture -> Hazards',
+    options: [
+      { id: 'v3a', text: '1, 2 and 3 only', isCorrect: true, feedback: 'Correct.' },
+      { id: 'v3b', text: '2 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'v3c', text: '1, 2 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'v3d', text: '1 and 3 only', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_fault_reduction',
+    tier: Tier.Tier1,
+    category: 'Tasting',
+    region: 'Faults',
+    questionText: 'What stinky character does Reduction give to a wine?',
+    explanationText: 'Reduction occurs in an oxygen-deprived environment, producing volatile sulfur compounds like H2S (rotten eggs) or mercaptans (cabbage).',
+    mentalMapText: 'Tasting -> Faults',
+    options: [
+      { id: 'f1a', text: 'Damp cardboard', isCorrect: false, feedback: 'TCA/Cork taint.' },
+      { id: 'f1b', text: 'Caramel and toffee', isCorrect: false, feedback: 'Oxidation.' },
+      { id: 'f1c', text: 'Rotten eggs and boiled cabbage', isCorrect: true, feedback: 'Correct.' },
+      { id: 'f1d', text: 'Mould and vinegar', isCorrect: false, feedback: 'VA/Oxidation.' }
+    ]
+  },
+  {
+    id: 'wset_make_fining',
+    tier: Tier.Tier1,
+    category: 'Winemaking',
+    region: 'General',
+    questionText: 'In wine production, what is the purpose of fining?',
+    explanationText: 'Fining involves adding a clarifying agent that binds with microscopic particles, causing them to precipitate out for easier removal.',
+    mentalMapText: 'Winemaking -> Clarification',
+    options: [
+      { id: 'm1a', text: 'To add flavour to the wine', isCorrect: false, feedback: '' },
+      { id: 'm1b', text: 'To filter the wine', isCorrect: false, feedback: 'Filtration is a separate physical process.' },
+      { id: 'm1c', text: 'To clarify the wine', isCorrect: true, feedback: 'Correct.' },
+      { id: 'm1d', text: 'To remove tartrate crystals', isCorrect: false, feedback: 'Cold stabilization removes tartrates.' }
+    ]
+  },
+  {
+    id: 'wset_make_red_extraction_not',
+    tier: Tier.Tier1,
+    category: 'Winemaking',
+    region: 'General',
+    questionText: 'In red winemaking, which one of the following methods would NOT help in the extraction of colour?',
+    explanationText: 'Malolactic Fermentation (MLF) converts malic acid to lactic acid but does not extract colour. Pumping over, rack and return, and autovinification are all extraction techniques.',
+    mentalMapText: 'Winemaking -> Red Extraction',
+    options: [
+      { id: 'm2a', text: 'Pumping over', isCorrect: false, feedback: 'Increases extraction.' },
+      { id: 'm2b', text: 'Autovinification', isCorrect: false, feedback: 'Increases extraction.' },
+      { id: 'm2c', text: 'Malolactic fermentation', isCorrect: true, feedback: 'Correct. This softens acid but does not extract pigment.' },
+      { id: 'm2d', text: 'Rack and return', isCorrect: false, feedback: 'Increases extraction.' }
+    ]
+  },
+  {
+    id: 'wset_cornas_white_not',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Rhône',
+    questionText: 'Which one of the following CANNOT be made as a white wine?',
+    explanationText: 'Cornas is an appellation in the Northern Rhône that must be 100% Syrah (Red). Pessac-Léognan, Hermitage, and Entre-Deux-Mers all produce white wine.',
+    mentalMapText: 'France -> Rhône -> Cornas',
+    options: [
+      { id: 'r1a', text: 'Pessac-Léognan', isCorrect: false, feedback: '' },
+      { id: 'r1b', text: 'Hermitage', isCorrect: false, feedback: 'Produces white from Marsanne/Roussanne.' },
+      { id: 'r1c', text: 'Entre-Deux-Mers', isCorrect: false, feedback: 'Exclusively White.' },
+      { id: 'r1d', text: 'Cornas', isCorrect: true, feedback: 'Correct. Cornas is Red only.' }
+    ]
+  },
+  {
+    id: 'wset_burgundy_pairs_extra',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Burgundy',
+    questionText: 'Which one of the following pairs is correctly matched?',
+    explanationText: 'Coteaux du Layon is an appellation for sweet Chenin Blanc in Anjou-Saumur. Montagny is Côte Chalonnaise, not Côte d\'Or.',
+    mentalMapText: 'France -> Loire -> Anjou',
+    options: [
+      { id: 'b1a', text: 'Montagny and Côte d\'Or', isCorrect: false, feedback: 'Montagny is Côte Chalonnaise.' },
+      { id: 'b1b', text: 'Fleurie and Touraine', isCorrect: false, feedback: 'Fleurie is Beaujolais.' },
+      { id: 'b1c', text: 'Moulin-à-Vent and Mâconnais', isCorrect: false, feedback: 'Moulin-à-Vent is Beaujolais.' },
+      { id: 'b1d', text: 'Coteaux du Layon and Anjou-Saumur', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_bordeaux_cru_classe',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Bordeaux',
+    questionText: 'Which of the following appellations are associated with the term cru classé? (1. Pomerol 2. Saint Julien 3. Saint-Émilion 4. Entre-Deux-Mers)',
+    explanationText: 'Pomerol has no official classification. Entre-Deux-Mers is for white wine and lacks Cru Classé status. Saint Julien (1855) and Saint-Émilion have classification systems.',
+    mentalMapText: 'France -> Bordeaux -> Classification',
+    options: [
+      { id: 'bx1a', text: '3 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'bx1b', text: '2 and 3 only', isCorrect: true, feedback: 'Correct.' },
+      { id: 'bx1c', text: '1 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'bx1d', text: '2 and 4 only', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_germany_dornfelder',
+    tier: Tier.Tier1,
+    category: 'Germany',
+    region: 'General',
+    questionText: 'What is Dornfelder?',
+    explanationText: 'Dornfelder is a black grape variety widely grown in Germany, known for its deep colour and high yields.',
+    mentalMapText: 'Germany -> Grapes',
+    options: [
+      { id: 'g1a', text: 'A black grape variety from Germany', isCorrect: true, feedback: 'Correct.' },
+      { id: 'g1b', text: 'A white grape variety from Germany', isCorrect: false, feedback: '' },
+      { id: 'g1c', text: 'A black grape variety from Italy', isCorrect: false, feedback: '' },
+      { id: 'g1d', text: 'A white grape variety from Portugal', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_italy_white_greco',
+    tier: Tier.Tier1,
+    category: 'Italy',
+    region: 'Campania',
+    questionText: 'Which one of the following is a dry white Italian wine?',
+    explanationText: 'Greco di Tufo (Campania) is a dry white wine. Barbera, Aglianico, and Taurasi are all reds.',
+    mentalMapText: 'Italy -> Campania',
+    options: [
+      { id: 'i1a', text: 'Barbera d\'Asti DOCG', isCorrect: false, feedback: 'Red.' },
+      { id: 'i1b', text: 'Aglianico del Vulture DOC', isCorrect: false, feedback: 'Red.' },
+      { id: 'i1c', text: 'Taurasi DOCG', isCorrect: false, feedback: 'Red.' },
+      { id: 'i1d', text: 'Greco di Tufo DOCG', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_italy_pair_brunello',
+    tier: Tier.Tier1,
+    category: 'Italy',
+    region: 'Tuscany',
+    questionText: 'Which one of the following pairs is correctly matched?',
+    explanationText: 'Brunello di Montalcino is a famous DOCG in Tuscany. Orvieto is in Umbria, not Lazio; Salice Salentino is in Puglia.',
+    mentalMapText: 'Italy -> Tuscany',
+    options: [
+      { id: 'i2a', text: 'Abruzzo and Verdicchio dei Castelli di Jesi DOC', isCorrect: false, feedback: 'Verdicchio is in Marche.' },
+      { id: 'i2b', text: 'Tuscany and Brunello di Montalcino DOCG', isCorrect: true, feedback: 'Correct.' },
+      { id: 'i2c', text: 'Campania and Salice Salentino DOC', isCorrect: false, feedback: 'Salice is in Puglia.' },
+      { id: 'i2d', text: 'Lazio and Orvieto DOC', isCorrect: false, feedback: 'Orvieto is Umbria (mostly).' }
+    ]
+  },
+  {
+    id: 'wset_spain_rioja_shield',
+    tier: Tier.Tier1,
+    category: 'Spain',
+    region: 'Rioja',
+    questionText: 'What natural feature shields Rioja from the worst of the Atlantic weather?',
+    explanationText: 'The Cantabrian Mountains provide a rain shadow for Rioja, protecting it from the Atlantic influence.',
+    mentalMapText: 'Spain -> Rioja -> Geography',
+    options: [
+      { id: 's1a', text: 'Cascade Mountains', isCorrect: false, feedback: 'USA.' },
+      { id: 's1b', text: 'Sierra Nevada', isCorrect: false, feedback: 'Southern Spain/California.' },
+      { id: 's1c', text: 'Pyrenees', isCorrect: false, feedback: 'Further East.' },
+      { id: 's1d', text: 'Cantabrian Mountains', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_spain_airen',
+    tier: Tier.Tier1,
+    category: 'Spain',
+    region: 'General',
+    questionText: 'What is the most planted grape variety in Spain?',
+    explanationText: 'Airén is the most planted variety in Spain (and one of the most in the world), used mainly for Brandy and inexpensive white wine.',
+    mentalMapText: 'Spain -> Grapes',
+    options: [
+      { id: 's2a', text: 'Tempranillo', isCorrect: false, feedback: 'Most planted black grape, but Airén is #1 overall.' },
+      { id: 's2b', text: 'Monastrell', isCorrect: false, feedback: '' },
+      { id: 's2c', text: 'Airén', isCorrect: true, feedback: 'Correct.' },
+      { id: 's2d', text: 'Viura', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_portugal_alentejo_igp',
+    tier: Tier.Tier1,
+    category: 'Portugal',
+    region: 'Alentejo',
+    questionText: 'In which country is the Vinho Regional Alentejano wine producing region?',
+    explanationText: 'Vinho Regional Alentejano is the IGP category for the Alentejo region in Portugal.',
+    mentalMapText: 'Portugal -> Regions',
+    options: [
+      { id: 'p1a', text: 'Portugal', isCorrect: true, feedback: 'Correct.' },
+      { id: 'p1b', text: 'Greece', isCorrect: false, feedback: '' },
+      { id: 'p1c', text: 'Italy', isCorrect: false, feedback: '' },
+      { id: 'p1d', text: 'Spain', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_chile_coquimbo_valleys',
+    tier: Tier.Tier2,
+    category: 'Chile',
+    region: 'Coquimbo',
+    questionText: 'In which region of Chile are Elqui Valley and Limarí Valley located?',
+    explanationText: 'Elqui and Limarí are the principal valleys of the Coquimbo region in Northern Chile.',
+    mentalMapText: 'Chile -> Coquimbo',
+    options: [
+      { id: 'cl1a', text: 'Central Valley', isCorrect: false, feedback: '' },
+      { id: 'cl1b', text: 'Southern', isCorrect: false, feedback: '' },
+      { id: 'cl1c', text: 'Aconcagua', isCorrect: false, feedback: '' },
+      { id: 'cl1d', text: 'Coquimbo', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_sa_chenin_planted',
+    tier: Tier.Tier1,
+    category: 'South Africa',
+    region: 'General',
+    questionText: 'Which grape variety is the most planted in South Africa?',
+    explanationText: 'Chenin Blanc (historically called Steen) is the most planted variety in South Africa.',
+    mentalMapText: 'South Africa -> Grapes',
+    options: [
+      { id: 'sa1a', text: 'Chenin Blanc', isCorrect: true, feedback: 'Correct.' },
+      { id: 'sa1b', text: 'Chardonnay', isCorrect: false, feedback: '' },
+      { id: 'sa1c', text: 'Pinotage', isCorrect: false, feedback: '' },
+      { id: 'sa1d', text: 'Colombard', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_aus_pn_premium',
+    tier: Tier.Tier2,
+    category: 'Australia',
+    region: 'General',
+    questionText: 'Which of the following regions produces premium quality Pinot Noir? (1. Mornington Peninsula 2. Coonawarra 3. Yarra Valley 4. Great Southern)',
+    explanationText: 'Mornington Peninsula and Yarra Valley are cool maritime regions ideal for Pinot Noir. Coonawarra is famous for Cabernet; Great Southern is Riesling/Cabernet.',
+    mentalMapText: 'Australia -> Cool Climate Regions',
+    options: [
+      { id: 'au1a', text: '2 and 3 only', isCorrect: false, feedback: '' },
+      { id: 'au1b', text: '1 and 2 only', isCorrect: false, feedback: '' },
+      { id: 'au1c', text: '2 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'au1d', text: '1 and 3 only', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_nz_hawkes_soil',
+    tier: Tier.Tier2,
+    category: 'New Zealand',
+    region: 'Hawke\'s Bay',
+    questionText: 'What is the name of the soil in Hawke\'s Bay which has developed a particular high reputation for black grape varieties?',
+    explanationText: 'Gimblett Gravels is the famous stony soil in Hawke\'s Bay that retains heat and provides drainage for premium Syrah and Bordeaux blends.',
+    mentalMapText: 'New Zealand -> Hawke\'s Bay',
+    options: [
+      { id: 'nz1a', text: 'Terra Rossa', isCorrect: false, feedback: 'Coonawarra.' },
+      { id: 'nz1b', text: 'Llicorella', isCorrect: false, feedback: 'Priorat.' },
+      { id: 'nz1c', text: 'Gimblett Gravels', isCorrect: true, feedback: 'Correct.' },
+      { id: 'nz1d', text: 'Schist bedrock', isCorrect: false, feedback: 'Douro.' }
+    ]
+  },
+  {
+    id: 'wset_cava_town',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Spain',
+    questionText: 'Cava comes from vineyards centred around which town?',
+    explanationText: 'Sant Sadurní d\'Anoia is the historic heart of Cava production in Catalonia.',
+    mentalMapText: 'Sparkling -> Cava',
+    options: [
+      { id: 'cv1a', text: 'Vila Nova de Gaia', isCorrect: false, feedback: 'Port.' },
+      { id: 'cv1b', text: 'Sant Sadurni d\'Anoia', isCorrect: true, feedback: 'Correct.' },
+      { id: 'cv1c', text: 'Jerez de la Frontera', isCorrect: false, feedback: 'Sherry.' },
+      { id: 'cv1d', text: 'El Puerto de Santa Maria', isCorrect: false, feedback: 'Sherry.' }
+    ]
+  },
+  {
+    id: 'wset_prosecco_glera',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Italy',
+    questionText: 'Which grape variety is used to make Prosecco?',
+    explanationText: 'Glera is the principal grape variety used to produce Prosecco.',
+    mentalMapText: 'Sparkling -> Prosecco',
+    options: [
+      { id: 'pr1a', text: 'Glera', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pr1b', text: 'Verdicchio', isCorrect: false, feedback: '' },
+      { id: 'pr1c', text: 'Muscat à Petits Grains', isCorrect: false, feedback: '' },
+      { id: 'pr1d', text: 'Pinot Grigio', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_sparkling_cp_regions',
+    tier: Tier.Tier2,
+    category: 'Sparkling',
+    region: 'General',
+    questionText: 'Which of the following regions use Chardonnay and Pinot Noir for sparkling wine production? (1. Adelaide Hills 2. Champagne 3. Anderson Valley 4. Marlborough)',
+    explanationText: 'All four regions utilize the classic Champagne varieties (Chardonnay and Pinot Noir) for their premium sparkling wines.',
+    mentalMapText: 'Sparkling -> Regions',
+    options: [
+      { id: 'spk1a', text: '1, 2 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'spk1b', text: '2, 3 and 4 only', isCorrect: false, feedback: '' },
+      { id: 'spk1c', text: '1, 2, 3 and 4', isCorrect: true, feedback: 'Correct.' },
+      { id: 'spk1d', text: '1, 2 and 3 only', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_sparkling_demi_sec',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Legislation',
+    questionText: 'What is the level of residual sugar in a sparkling wine labelled as demi-sec?',
+    explanationText: 'Demi-sec indicates a medium-sweet style with 32-50 g/L of sugar.',
+    mentalMapText: 'Sparkling -> Sweetness',
+    options: [
+      { id: 'ds1a', text: '0-12 g/L', isCorrect: false, feedback: 'Brut.' },
+      { id: 'ds1b', text: '12-17 g/L', isCorrect: false, feedback: 'Extra Dry.' },
+      { id: 'ds1c', text: '17-32 g/L', isCorrect: false, feedback: 'Sec/Dry.' },
+      { id: 'ds1d', text: '32-50 g/L', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_sherry_manzanilla_mat',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Jerez',
+    questionText: 'Where is Manzanilla matured?',
+    explanationText: 'Manzanilla is a Fino-style Sherry that must be matured in the seaside town of Sanlúcar de Barrameda.',
+    mentalMapText: 'Spain -> Sherry -> Manzanilla',
+    options: [
+      { id: 'mz1a', text: 'El Puerto de Santa Maria', isCorrect: false, feedback: '' },
+      { id: 'mz1b', text: 'Vila Nova de Gaia', isCorrect: false, feedback: 'Port.' },
+      { id: 'mz1c', text: 'Jerez de la Frontera', isCorrect: false, feedback: 'Standard Fino.' },
+      { id: 'mz1d', text: 'Sanlúcar de Barrameda', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'wset_douro_aguardente',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Douro',
+    questionText: 'What is aguardente?',
+    explanationText: 'Aguardente is the neutral grape spirit (77% abv) used to fortify Port wine.',
+    mentalMapText: 'Portugal -> Port Production',
+    options: [
+      { id: 'ag1a', text: 'A soil type in Jerez', isCorrect: false, feedback: '' },
+      { id: 'ag1b', text: 'A soil type in the Douro Valley', isCorrect: false, feedback: '' },
+      { id: 'ag1c', text: 'The spirit used in fortifying Port', isCorrect: true, feedback: 'Correct.' },
+      { id: 'ag1d', text: 'A method of drying grapes', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_aus_rutherglen_false',
+    tier: Tier.Tier2,
+    category: 'Fortified',
+    region: 'Rutherglen',
+    questionText: 'In relation to Rutherglen Muscat, which one of the following statements is FALSE?',
+    explanationText: 'Rutherglen Muscat is matured in old wood (oak) to encourage oxidative development. Stainless steel would prevent the required oxidative style.',
+    mentalMapText: 'Australia -> Rutherglen',
+    options: [
+      { id: 'rm1a', text: 'It undergoes a period of oxidative ageing', isCorrect: false, feedback: 'True statement.' },
+      { id: 'rm1b', text: 'Stainless steel is normally used for maturation', isCorrect: true, feedback: 'Correct (this is False). Wood is used.' },
+      { id: 'rm1c', text: 'Fermentation will nearly always take place on the skins', isCorrect: false, feedback: 'True statement (for extraction).' },
+      { id: 'rm1d', text: 'Fortification takes place during fermentation', isCorrect: false, feedback: 'True statement.' }
+    ]
+  },
+  {
+    id: 'wset_service_barolo_temp',
+    tier: Tier.Tier1,
+    category: 'Service',
+    region: 'General',
+    questionText: 'At what temperature is Barolo best served?',
+    explanationText: 'Barolo is a full-bodied red wine, best served at room temperature (15-18°C).',
+    mentalMapText: 'Service -> Temperature',
+    options: [
+      { id: 'bt1a', text: 'Well chilled 6-8°C', isCorrect: false, feedback: '' },
+      { id: 'bt1b', text: 'Room temperature 15-18°C', isCorrect: true, feedback: 'Correct.' },
+      { id: 'bt1c', text: 'Chilled 7-10°C', isCorrect: false, feedback: '' },
+      { id: 'bt1d', text: 'Lightly chilled 10-13°C', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_food_umami',
+    tier: Tier.Tier2,
+    category: 'Pairing',
+    region: 'General',
+    questionText: 'What happens to wine when paired with food high in umami?',
+    explanationText: 'Umami makes wine seem more "hard": increasing the perception of bitterness, astringency, and acidity, while making it seem less fruity/sweet.',
+    mentalMapText: 'Pairing -> Umami',
+    options: [
+      { id: 'u1a', text: 'The wine appears less bitter', isCorrect: false, feedback: '' },
+      { id: 'u1b', text: 'The wine appears less astringent', isCorrect: false, feedback: '' },
+      { id: 'u1c', text: 'The wine becomes more acidic', isCorrect: true, feedback: 'Correct.' },
+      { id: 'u1d', text: 'The wine appears sweeter', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'wset_health_safe_encourage',
+    tier: Tier.Tier1,
+    category: 'Responsible Drinking',
+    region: 'General',
+    questionText: 'How can the safe consumption of alcohol be encouraged? (1. By carefully publishing sensible drinking guidelines 2. By recommending maximum allowances 3. By restricting advertising)',
+    explanationText: 'Government and health guidelines use all three strategies to encourage responsible drinking behavior.',
+    mentalMapText: 'General -> Health',
+    options: [
+      { id: 'h1a', text: '1 and 3 only', isCorrect: false, feedback: '' },
+      { id: 'h1b', text: '1, 2 and 3', isCorrect: true, feedback: 'Correct.' },
+      { id: 'h1c', text: '1 and 2 only', isCorrect: false, feedback: '' },
+      { id: 'h1d', text: '2 and 3 only', isCorrect: false, feedback: '' }
+    ]
   }
 ];
