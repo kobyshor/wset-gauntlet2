@@ -2600,5 +2600,1522 @@ export const QUESTIONS: Question[] = [
       { id: 'h1c', text: '1 and 2 only', isCorrect: false, feedback: '' },
       { id: 'h1d', text: '2 and 3 only', isCorrect: false, feedback: '' }
     ]
+  },
+    {
+    id: 'pq_2_vsp_vigour',
+    tier: Tier.Tier2,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which viticultural technique is most effective for controlling vigorous vines in a wet region?',
+    explanationText: 'Vertical Shoot Positioning (VSP) trains shoots upwards, keeping the canopy open and aerated. This is crucial in wet regions to prevent fungal disease and in vigorous vines to avoid shading.',
+    mentalMapText: 'Viticulture -> Canopy Management',
+    options: [
+      { id: 'pq2a', text: 'Replacement cane pruning', isCorrect: false, feedback: 'This is a pruning method (Guyot), not a trellis system for vigour control per se.' },
+      { id: 'pq2b', text: 'Vertical Shoot Positioning (VSP)', isCorrect: true, feedback: 'Correct. Promotes airflow and light exposure.' },
+      { id: 'pq2c', text: 'Bush vine training', isCorrect: false, feedback: 'Used in hot, dry, sunny regions (e.g., Beaujolais, Barossa) to shade fruit.' },
+      { id: 'pq2d', text: 'Increasing the use of irrigation', isCorrect: false, feedback: 'Adding water would increase vigour, not control it.' }
+    ]
+  },
+  {
+    id: 'pq_3_green_harvest',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'What is the primary purpose of "green harvesting"?',
+    explanationText: 'Green harvesting is the removal of immature grape bunches during the growing season. This concentrates the vine\'s energy into the remaining bunches, improving ripeness and controlling yield.',
+    mentalMapText: 'Viticulture -> Vineyard Management',
+    options: [
+      { id: 'pq3a', text: 'To increase the yield of the vine', isCorrect: false, feedback: 'It reduces yield.' },
+      { id: 'pq3b', text: 'To prevent fungal diseases by removing leaves', isCorrect: false, feedback: 'This is "leaf stripping" or "canopy management".' },
+      { id: 'pq3c', text: 'To remove immature grapes to control yield and improve ripeness', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq3d', text: 'To harvest grapes early for sparkling wine production', isCorrect: false, feedback: 'This is just an early harvest, not a "green" harvest.' }
+    ]
+  },
+  {
+    id: 'pq_4_noble_rot',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which of the following conditions is essential for the development of Noble Rot (Botrytis cinerea)?',
+    explanationText: 'Noble Rot requires humid mornings (to allow the fungus to grow and puncture the skin) followed by warm, dry afternoons (to evaporate water and concentrate sugars/acids).',
+    mentalMapText: 'Viticulture -> Pests and Diseases',
+    options: [
+      { id: 'pq4a', text: 'Dry, windy conditions throughout the autumn', isCorrect: false, feedback: 'The fungus requires humidity to develop.' },
+      { id: 'pq4b', text: 'Humid mornings followed by warm, dry afternoons', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq4c', text: 'Constant heavy rainfall during the ripening period', isCorrect: false, feedback: 'This leads to Grey Rot, which destroys the crop.' },
+      { id: 'pq4d', text: 'Freezing temperatures in the vineyard', isCorrect: false, feedback: 'This is required for Eiswein, not Botrytis.' }
+    ]
+  },
+  {
+    id: 'pq_5_rootstocks',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which rootstock type is primarily used to protect against Phylloxera?',
+    explanationText: 'American vine species (e.g., Vitis rupestris, Vitis riparia) evolved with Phylloxera and release a sticky sap that clogs the pest\'s mouth, making them immune.',
+    mentalMapText: 'Viticulture -> Phylloxera',
+    options: [
+      { id: 'pq5a', text: 'Vitis vinifera', isCorrect: false, feedback: 'Vitis vinifera is highly susceptible to Phylloxera.' },
+      { id: 'pq5b', text: 'American vine species', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq5c', text: 'Clones of Pinot Noir', isCorrect: false, feedback: 'Pinot Noir is Vitis vinifera.' },
+      { id: 'pq5d', text: 'Hybrid crossings', isCorrect: false, feedback: 'Hybrids are crosses of species, but pure American rootstocks are the primary defense base.' }
+    ]
+  },
+
+  // --- Section 2: Human Factors in the Winery (Vinification) ---
+  {
+    id: 'pq_6_acidification',
+    tier: Tier.Tier1,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'Which acid is typically added during "acidification" in warm climate regions?',
+    explanationText: 'Tartaric acid is the primary acid found in grapes and is the standard choice for acidification. It is stable and provides the crispness associated with wine acidity.',
+    mentalMapText: 'Vinification -> Adjustments',
+    options: [
+      { id: 'pq6a', text: 'Malic acid', isCorrect: false, feedback: 'Ideally converted to Lactic, rarely added.' },
+      { id: 'pq6b', text: 'Lactic acid', isCorrect: false, feedback: 'Result of Malolactic Conversion, not usually added for acidification.' },
+      { id: 'pq6c', text: 'Tartaric acid', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq6d', text: 'Acetic acid', isCorrect: false, feedback: 'This is vinegar (Volatile Acidity) and is a fault.' }
+    ]
+  },
+  {
+    id: 'pq_7_malo',
+    tier: Tier.Tier1,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'Which winemaking process is responsible for converting sharp malic acid into softer lactic acid?',
+    explanationText: 'Malolactic Conversion (often called MLF) is carried out by lactic acid bacteria after alcoholic fermentation. It softens acidity and adds buttery/creamy notes.',
+    mentalMapText: 'Vinification -> Fermentation',
+    options: [
+      { id: 'pq7a', text: 'Alcoholic fermentation', isCorrect: false, feedback: 'Converts sugar to alcohol (Yeast).' },
+      { id: 'pq7b', text: 'Malolactic conversion', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq7c', text: 'Carbonic maceration', isCorrect: false, feedback: 'Intracellular fermentation for fruity red wines.' },
+      { id: 'pq7d', text: 'Stabilization', isCorrect: false, feedback: 'Prevents crystals/haze.' }
+    ]
+  },
+  {
+    id: 'pq_8_oxidative_vessel',
+    tier: Tier.Tier1,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'Which of the following vessels provides an oxidative environment for maturation?',
+    explanationText: 'Old oak barrels are porous, allowing minute amounts of oxygen to interact with the wine (micro-oxygenation), softening tannins and developing tertiary flavours without adding oak flavour.',
+    mentalMapText: 'Vinification -> Maturation',
+    options: [
+      { id: 'pq8a', text: 'Stainless steel tank', isCorrect: false, feedback: 'Inert/Anaerobic.' },
+      { id: 'pq8b', text: 'Concrete egg (lined)', isCorrect: false, feedback: 'Generally inert if lined with epoxy.' },
+      { id: 'pq8c', text: 'Old oak barrel', isCorrect: true, feedback: 'Correct. Allows controlled oxygen exposure.' },
+      { id: 'pq8d', text: 'Glass bottle', isCorrect: false, feedback: 'Anaerobic (mostly, depending on closure).' }
+    ]
+  },
+  {
+    id: 'pq_9_cap_management',
+    tier: Tier.Tier1,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'In red winemaking, what is the purpose of "Cap Management" techniques like punching down?',
+    explanationText: 'The cap (skins) floats to the top. Punching down (Pigeage) or pumping over (Remontage) submerges the skins to extract colour, tannin, and flavour into the juice.',
+    mentalMapText: 'Vinification -> Red Winemaking',
+    options: [
+      { id: 'pq9a', text: 'To keep the fermentation temperature low', isCorrect: false, feedback: 'Temperature control is separate.' },
+      { id: 'pq9b', text: 'To extract colour, tannin, and flavour from the skins', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq9c', text: 'To prevent oxygen from reaching the wine', isCorrect: false, feedback: 'It actually introduces some oxygen.' },
+      { id: 'pq9d', text: 'To remove the gross lees', isCorrect: false, feedback: 'Racking removes lees.' }
+    ]
+  },
+  {
+    id: 'pq_10_fining',
+    tier: Tier.Tier1,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'Which clarification method involves adding a substance to the wine that binds with unstable proteins?',
+    explanationText: 'Fining involves adding agents (like Bentonite for proteins or Egg White for tannins) that bind to unstable particles, making them large enough to precipitate out.',
+    mentalMapText: 'Vinification -> Clarification',
+    options: [
+      { id: 'pq10a', text: 'Filtration', isCorrect: false, feedback: 'Physical removal via a filter.' },
+      { id: 'pq10b', text: 'Sedimentation', isCorrect: false, feedback: 'Gravity settling (Racking).' },
+      { id: 'pq10c', text: 'Fining', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq10d', text: 'Racking', isCorrect: false, feedback: 'Moving wine off sediment.' }
+    ]
+  },
+
+  // --- Section 3: White Wines of Germany, Alsace, Austria & Tokaj ---
+  {
+    id: 'pq_11_eiswein',
+    tier: Tier.Tier1,
+    category: 'Germany',
+    region: 'General',
+    questionText: 'Which Prädikat level typically indicates a wine made from frozen grapes?',
+    explanationText: 'Eiswein is made from grapes left on the vine until they freeze (below -7°C or -8°C). Pressing them while frozen leaves the water ice behind, concentrating sugar and acid.',
+    mentalMapText: 'Germany -> Prädikatswein',
+    options: [
+      { id: 'pq11a', text: 'Beerenauslese', isCorrect: false, feedback: 'Selected berries, usually botrytis.' },
+      { id: 'pq11b', text: 'Trockenbeerenauslese', isCorrect: false, feedback: 'Dried berries, fully botrytised.' },
+      { id: 'pq11c', text: 'Eiswein', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq11d', text: 'Auslese', isCorrect: false, feedback: 'Selected bunches.' }
+    ]
+  },
+  {
+    id: 'pq_12_mosel_slopes',
+    tier: Tier.Tier2,
+    category: 'Germany',
+    region: 'Mosel',
+    questionText: 'In the Mosel Valley, what role do the steep, slate slopes play?',
+    explanationText: 'The slate absorbs heat during the day and radiates it back at night, aiding ripening in this cool climate. The steep angle also intercepts sunlight more directly.',
+    mentalMapText: 'Germany -> Mosel',
+    options: [
+      { id: 'pq12a', text: 'They retain water to prevent drought', isCorrect: false, feedback: 'Slate is free-draining.' },
+      { id: 'pq12b', text: 'They absorb heat and radiate it back to the vine', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq12c', text: 'They allow for mechanised harvesting', isCorrect: false, feedback: 'Slopes are too steep for machines.' },
+      { id: 'pq12d', text: 'They protect the vines from the Mistral wind', isCorrect: false, feedback: 'Mistral is in the Rhône Valley.' }
+    ]
+  },
+  {
+    id: 'pq_13_vendanges_tardives',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Alsace',
+    questionText: 'A wine labelled "Vendanges Tardives" from Alsace must be:',
+    explanationText: 'VT means "Late Harvest". It must be made from one of the four noble varieties (Riesling, Muscat, Gewurz, Pinot Gris) and have a minimum sugar weight. It can be dry or sweet.',
+    mentalMapText: 'France -> Alsace -> Labelling',
+    options: [
+      { id: 'pq13a', text: 'Always sweet', isCorrect: false, feedback: 'Can be dry or medium-sweet.' },
+      { id: 'pq13b', text: 'Made from late-harvested grapes from one of the four noble varieties', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq13c', text: 'Made from grapes affected by Noble Rot', isCorrect: false, feedback: 'Not required (unlike SGN).' },
+      { id: 'pq13d', text: 'Dry and high in alcohol', isCorrect: false, feedback: 'Can be sweet.' }
+    ]
+  },
+  {
+    id: 'pq_14_austria_grape',
+    tier: Tier.Tier1,
+    category: 'Austria',
+    region: 'General',
+    questionText: 'Which grape variety is the most widely planted in Austria and produces wines with flavours of white pepper and citrus?',
+    explanationText: 'Grüner Veltliner is Austria\'s signature grape, capable of producing high-quality wines with distinctive white pepper, lentil, and citrus notes.',
+    mentalMapText: 'Austria -> Grapes',
+    options: [
+      { id: 'pq14a', text: 'Riesling', isCorrect: false, feedback: 'Important, but less planted than Grüner.' },
+      { id: 'pq14b', text: 'Müller-Thurgau', isCorrect: false, feedback: 'Widely planted, but simple wines.' },
+      { id: 'pq14c', text: 'Grüner Veltliner', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq14d', text: 'Welschriesling', isCorrect: false, feedback: 'Used for sweet wines and simple dry whites.' }
+    ]
+  },
+  {
+    id: 'pq_15_puttonyos',
+    tier: Tier.Tier1,
+    category: 'Hungary',
+    region: 'Tokaj',
+    questionText: 'What does the term "Puttonyos" indicate on a bottle of Tokaji Aszú?',
+    explanationText: 'Puttonyos is the traditional unit of sweetness for Tokaji Aszú. (Note: Though the label requirement changed in 2013 to just "Aszú" for 5+ puttonyos level, the term historically and conceptually refers to sweetness level).',
+    mentalMapText: 'Hungary -> Tokaj',
+    options: [
+      { id: 'pq15a', text: 'The level of alcohol', isCorrect: false, feedback: '' },
+      { id: 'pq15b', text: 'The length of oak ageing', isCorrect: false, feedback: '' },
+      { id: 'pq15c', text: 'The level of sweetness', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq15d', text: 'The specific vineyard site', isCorrect: false, feedback: '' }
+    ]
+  },
+
+  // --- Section 4: Wines of France (Burgundy, Bordeaux, Loire, Rhône, S. France) ---
+  {
+    id: 'pq_16_chablis_soil',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Burgundy',
+    questionText: 'Which region in Burgundy is famous for producing white wines from 100% Chardonnay on Kimmeridgian clay soils?',
+    explanationText: 'Chablis is the northernmost district of Burgundy, famous for crisp, high-acid Chardonnay grown on fossil-rich Kimmeridgian clay/limestone.',
+    mentalMapText: 'France -> Burgundy -> Chablis',
+    options: [
+      { id: 'pq16a', text: 'Côte de Nuits', isCorrect: false, feedback: 'Famous for Pinot Noir.' },
+      { id: 'pq16b', text: 'Mâconnais', isCorrect: false, feedback: 'Limestone, but further south.' },
+      { id: 'pq16c', text: 'Chablis', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq16d', text: 'Côte Chalonnaise', isCorrect: false, feedback: 'Mixed red/white.' }
+    ]
+  },
+  {
+    id: 'pq_17_cote_rotie_viognier',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Rhône',
+    questionText: 'In the Northern Rhône, which white grape variety is often co-fermented with Syrah in Côte-Rôtie?',
+    explanationText: 'Up to 20% Viognier is permitted in Côte-Rôtie to add floral aroma and stabilise the red colour, though less is usually used.',
+    mentalMapText: 'France -> Rhône -> Côte-Rôtie',
+    options: [
+      { id: 'pq17a', text: 'Marsanne', isCorrect: false, feedback: 'Used in Hermitage/St-Joseph.' },
+      { id: 'pq17b', text: 'Roussanne', isCorrect: false, feedback: 'Used in Hermitage/St-Joseph.' },
+      { id: 'pq17c', text: 'Viognier', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq17d', text: 'Grenache Blanc', isCorrect: false, feedback: 'Southern Rhône grape.' }
+    ]
+  },
+  {
+    id: 'pq_18_left_bank_gravel',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Bordeaux',
+    questionText: 'Which soil type is most associated with the high-quality Cabernet Sauvignon of the Left Bank (Haut-Médoc)?',
+    explanationText: 'Gravel soils (from the river) drain well and heat up quickly, which is essential for ripening the late-ripening Cabernet Sauvignon in Bordeaux\'s maritime climate.',
+    mentalMapText: 'France -> Bordeaux -> Left Bank',
+    options: [
+      { id: 'pq18a', text: 'Clay', isCorrect: false, feedback: 'Associated with Merlot (Right Bank).' },
+      { id: 'pq18b', text: 'Gravel', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq18c', text: 'Limestone', isCorrect: false, feedback: 'Associated with St-Émilion Plateau.' },
+      { id: 'pq18d', text: 'Granite', isCorrect: false, feedback: 'Associated with Northern Rhône/Beaujolais.' }
+    ]
+  },
+  {
+    id: 'pq_19_chinon_grape',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Loire',
+    questionText: 'What is the principal grape variety used in the red wines of Chinon and Bourgueil?',
+    explanationText: 'Cabernet Franc dominates the red wines of Touraine (Chinon, Bourgueil), producing wines with crunchy red fruit and pencil shaving notes.',
+    mentalMapText: 'France -> Loire -> Touraine',
+    options: [
+      { id: 'pq19a', text: 'Cabernet Sauvignon', isCorrect: false, feedback: 'Too cool for Cab Sauv generally.' },
+      { id: 'pq19b', text: 'Cabernet Franc', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq19c', text: 'Pinot Noir', isCorrect: false, feedback: 'Used in Sancerre Rouge.' },
+      { id: 'pq19d', text: 'Gamay', isCorrect: false, feedback: 'Used in Anjou/Touraine but not main for Chinon.' }
+    ]
+  },
+  {
+    id: 'pq_20_galets',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Rhône',
+    questionText: 'Which Southern Rhône appellation is famous for its "galets roulés" (large stones) that retain heat?',
+    explanationText: 'Châteauneuf-du-Pape is famous for these pudding stones which absorb solar heat during the day and release it at night to aid ripening.',
+    mentalMapText: 'France -> Rhône -> Châteauneuf-du-Pape',
+    options: [
+      { id: 'pq20a', text: 'Cornas', isCorrect: false, feedback: 'Northern Rhône.' },
+      { id: 'pq20b', text: 'Tavel', isCorrect: false, feedback: 'Rosé appellation.' },
+      { id: 'pq20c', text: 'Châteauneuf-du-Pape', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq20d', text: 'Hermitage', isCorrect: false, feedback: 'Northern Rhône.' }
+    ]
+  },
+  {
+    id: 'pq_21_cru_bourgeois',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Bordeaux',
+    questionText: 'A "Cru Bourgeois" wine comes from which French region?',
+    explanationText: 'Cru Bourgeois is a classification for red wines from the Médoc (Left Bank Bordeaux) that were not included in the 1855 classification.',
+    mentalMapText: 'France -> Bordeaux -> Classification',
+    options: [
+      { id: 'pq21a', text: 'Saint-Émilion', isCorrect: false, feedback: 'Right Bank.' },
+      { id: 'pq21b', text: 'The Médoc', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq21c', text: 'Beaujolais', isCorrect: false, feedback: '' },
+      { id: 'pq21d', text: 'Provence', isCorrect: false, feedback: 'Cru Classé exists there, but not Cru Bourgeois.' }
+    ]
+  },
+  {
+    id: 'pq_22_savennieres_chenin',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Loire',
+    questionText: 'Which of the following is a dry white wine from the Loire Valley made from Chenin Blanc?',
+    explanationText: 'Savennières produces powerful, dry, age-worthy Chenin Blanc. Sancerre/Pouilly-Fumé are Sauvignon Blanc; Muscadet is Melon Blanc.',
+    mentalMapText: 'France -> Loire -> Anjou-Saumur',
+    options: [
+      { id: 'pq22a', text: 'Sancerre', isCorrect: false, feedback: 'Sauvignon Blanc.' },
+      { id: 'pq22b', text: 'Pouilly-Fumé', isCorrect: false, feedback: 'Sauvignon Blanc.' },
+      { id: 'pq22c', text: 'Savennières', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq22d', text: 'Muscadet', isCorrect: false, feedback: 'Melon Blanc.' }
+    ]
+  },
+
+  // --- Section 5: Wines of Italy, Spain & Portugal ---
+  {
+    id: 'pq_23_barolo_nebbiolo',
+    tier: Tier.Tier1,
+    category: 'Italy',
+    region: 'Piemonte',
+    questionText: 'Which Italian DOCG is known for producing high-tannin, high-acid red wines from 100% Nebbiolo?',
+    explanationText: 'Barolo (and Barbaresco) in Piemonte is made exclusively from Nebbiolo, characterized by pale colour but immense tannins and acidity.',
+    mentalMapText: 'Italy -> Piemonte',
+    options: [
+      { id: 'pq23a', text: 'Chianti Classico', isCorrect: false, feedback: 'Sangiovese.' },
+      { id: 'pq23b', text: 'Amarone della Valpolicella', isCorrect: false, feedback: 'Corvina blend.' },
+      { id: 'pq23c', text: 'Barolo', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq23d', text: 'Brunello di Montalcino', isCorrect: false, feedback: 'Sangiovese.' }
+    ]
+  },
+  {
+    id: 'pq_24_ripasso',
+    tier: Tier.Tier2,
+    category: 'Italy',
+    region: 'Veneto',
+    questionText: 'The "Ripasso" method in Valpolicella increases alcohol and structure by:',
+    explanationText: 'Ripasso involves "re-passing" basic Valpolicella wine over the unpressed skins and lees of an Amarone fermentation. This induces a second fermentation, adding tannin, flavour, and alcohol.',
+    mentalMapText: 'Italy -> Veneto -> Valpolicella',
+    options: [
+      { id: 'pq24a', text: 'Drying grapes on straw mats for 3 months', isCorrect: false, feedback: 'This is Appassimento (for Amarone/Recioto).' },
+      { id: 'pq24b', text: 'Pumping the wine over unpressed skins from an Amarone fermentation', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq24c', text: 'Adding grape spirit to stop fermentation', isCorrect: false, feedback: 'This is Fortification.' },
+      { id: 'pq24d', text: 'Aging the wine in small new oak barrels for 5 years', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_25_rias_baixas',
+    tier: Tier.Tier1,
+    category: 'Spain',
+    region: 'Galicia',
+    questionText: 'Which Spanish region is located in Galicia and is famous for high-acid white wines made from Albariño?',
+    explanationText: 'Rías Baixas is on the cool, wet Atlantic coast (Galicia) and specialises in Albariño.',
+    mentalMapText: 'Spain -> North West',
+    options: [
+      { id: 'pq25a', text: 'Ribera del Duero', isCorrect: false, feedback: 'Inland, Red wines.' },
+      { id: 'pq25b', text: 'Priorat', isCorrect: false, feedback: 'Catalonia, Red wines.' },
+      { id: 'pq25c', text: 'Rías Baixas', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq25d', text: 'Toro', isCorrect: false, feedback: 'Inland, Red wines.' }
+    ]
+  },
+  {
+    id: 'pq_26_rioja_gran_reserva',
+    tier: Tier.Tier2,
+    category: 'Spain',
+    region: 'Legislation',
+    questionText: 'To carry the term "Gran Reserva" on the label, a Red Rioja must be aged for a minimum of:',
+    explanationText: 'Gran Reserva Red requires 60 months (5 years) total ageing, with a minimum of 24 months in oak barrels.',
+    mentalMapText: 'Spain -> Legislation',
+    options: [
+      { id: 'pq26a', text: '24 months total', isCorrect: false, feedback: 'Crianza.' },
+      { id: 'pq26b', text: '36 months total', isCorrect: false, feedback: 'Reserva.' },
+      { id: 'pq26c', text: '48 months total', isCorrect: false, feedback: '' },
+      { id: 'pq26d', text: '60 months total', isCorrect: true, feedback: 'Correct.' }
+    ]
+  },
+  {
+    id: 'pq_27_mencia',
+    tier: Tier.Tier1,
+    category: 'Spain',
+    region: 'Bierzo',
+    questionText: 'The black grape variety "Mencía" is primarily associated with which Spanish region?',
+    explanationText: 'Mencía is the key grape of Bierzo (border of Galicia and Castilla y León), producing wines with fresh fruit and herbal notes.',
+    mentalMapText: 'Spain -> Regions',
+    options: [
+      { id: 'pq27a', text: 'Bierzo', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq27b', text: 'La Mancha', isCorrect: false, feedback: 'Airén/Cencibel.' },
+      { id: 'pq27c', text: 'Navarra', isCorrect: false, feedback: 'Garnacha/Tempranillo.' },
+      { id: 'pq27d', text: 'Jumilla', isCorrect: false, feedback: 'Monastrell.' }
+    ]
+  },
+  {
+    id: 'pq_28_touriga_nacional',
+    tier: Tier.Tier1,
+    category: 'Portugal',
+    region: 'Douro',
+    questionText: 'In Douro, which premium grape variety is known for its intense colour, tannin, and floral aromas?',
+    explanationText: 'Touriga Nacional is considered the finest Douro grape, offering deep colour, high tannins, and violet aromas.',
+    mentalMapText: 'Portugal -> Grapes',
+    options: [
+      { id: 'pq28a', text: 'Tinta Barroca', isCorrect: false, feedback: 'High yield, sugar.' },
+      { id: 'pq28b', text: 'Touriga Nacional', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq28c', text: 'Tinta Roriz', isCorrect: false, feedback: 'Tempranillo.' },
+      { id: 'pq28d', text: 'Aragonez', isCorrect: false, feedback: 'Tempranillo (Southern Portugal name).' }
+    ]
+  },
+  {
+    id: 'pq_29_fiano_region',
+    tier: Tier.Tier1,
+    category: 'Italy',
+    region: 'Campania',
+    questionText: 'Fiano di Avellino DOCG is located in which Italian region?',
+    explanationText: 'Campania (Southern Italy) is the home of Fiano di Avellino, Taurasi, and Greco di Tufo.',
+    mentalMapText: 'Italy -> Campania',
+    options: [
+      { id: 'pq29a', text: 'Veneto', isCorrect: false, feedback: 'North East.' },
+      { id: 'pq29b', text: 'Tuscany', isCorrect: false, feedback: 'Central.' },
+      { id: 'pq29c', text: 'Campania', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq29d', text: 'Piemonte', isCorrect: false, feedback: 'North West.' }
+    ]
+  },
+
+  // --- Section 6: Wines of the New World ---
+  {
+    id: 'pq_30_central_otago',
+    tier: Tier.Tier1,
+    category: 'New Zealand',
+    region: 'South Island',
+    questionText: 'Which region in New Zealand is known for a continental climate and premium Pinot Noir?',
+    explanationText: 'Central Otago is the only inland region in NZ, providing a continental climate with high diurnal range, ideal for intense Pinot Noir.',
+    mentalMapText: 'New Zealand -> Regions',
+    options: [
+      { id: 'pq30a', text: 'Marlborough', isCorrect: false, feedback: 'Maritime. Sauvignon Blanc.' },
+      { id: 'pq30b', text: 'Hawke\'s Bay', isCorrect: false, feedback: 'Maritime. Bordeaux Blends.' },
+      { id: 'pq30c', text: 'Central Otago', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq30d', text: 'Gisborne', isCorrect: false, feedback: 'Maritime. Chardonnay.' }
+    ]
+  },
+  {
+    id: 'pq_31_rutherford_dust',
+    tier: Tier.Tier2,
+    category: 'USA',
+    region: 'California',
+    questionText: 'The "Rutherford Dust" characteristic is associated with Cabernet Sauvignon from:',
+    explanationText: 'Rutherford is a sub-AVA of Napa Valley, famous for the dusty, earthy tannin structure of its Cabernet Sauvignon.',
+    mentalMapText: 'USA -> California -> Napa',
+    options: [
+      { id: 'pq31a', text: 'Napa Valley', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq31b', text: 'Sonoma Coast', isCorrect: false, feedback: 'Pinot Noir/Chardonnay.' },
+      { id: 'pq31c', text: 'Willamette Valley', isCorrect: false, feedback: 'Oregon (Pinot Noir).' },
+      { id: 'pq31d', text: 'Margaret River', isCorrect: false, feedback: 'Australia.' }
+    ]
+  },
+  {
+    id: 'pq_32_casablanca',
+    tier: Tier.Tier1,
+    category: 'Chile',
+    region: 'Coquimbo/Aconcagua',
+    questionText: 'Which region in Chile is most famous for its cooling maritime influence and Sauvignon Blanc production?',
+    explanationText: 'Casablanca Valley is a coastal region cooled by morning fogs and ocean breezes, making it perfect for fresh Sauvignon Blanc.',
+    mentalMapText: 'Chile -> Regions',
+    options: [
+      { id: 'pq32a', text: 'Maipo Valley', isCorrect: false, feedback: 'Cabernet Sauvignon.' },
+      { id: 'pq32b', text: 'Colchagua Valley', isCorrect: false, feedback: 'Full bodied reds.' },
+      { id: 'pq32c', text: 'Casablanca Valley', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq32d', text: 'Curicó Valley', isCorrect: false, feedback: 'Workhorse region.' }
+    ]
+  },
+  {
+    id: 'pq_33_hunter_semillon',
+    tier: Tier.Tier1,
+    category: 'Australia',
+    region: 'Hunter Valley',
+    questionText: 'What is the signature white grape variety of the Hunter Valley in Australia?',
+    explanationText: 'Hunter Valley Semillon is a unique style: harvested early, low alcohol, high acid, unoaked, developing toast/honey with age.',
+    mentalMapText: 'Australia -> Hunter Valley',
+    options: [
+      { id: 'pq33a', text: 'Chardonnay', isCorrect: false, feedback: 'Grown there, but Semillon is the signature.' },
+      { id: 'pq33b', text: 'Riesling', isCorrect: false, feedback: 'Clare/Eden Valleys.' },
+      { id: 'pq33c', text: 'Semillon', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq33d', text: 'Sauvignon Blanc', isCorrect: false, feedback: 'Adelaide Hills/Margaret River.' }
+    ]
+  },
+  {
+    id: 'pq_34_swartland_chenin',
+    tier: Tier.Tier1,
+    category: 'South Africa',
+    region: 'Coastal Region',
+    questionText: 'Which region in South Africa is known for old vine Chenin Blanc and bush vines?',
+    explanationText: 'Swartland has gained international acclaim for high-quality wines made from old, dry-farmed bush vines (Chenin and Syrah).',
+    mentalMapText: 'South Africa -> Regions',
+    options: [
+      { id: 'pq34a', text: 'Walker Bay', isCorrect: false, feedback: 'Pinot Noir/Chardonnay.' },
+      { id: 'pq34b', text: 'Swartland', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq34c', text: 'Elgin', isCorrect: false, feedback: 'Cool climate Sauvignon/Pinot.' },
+      { id: 'pq34d', text: 'Constantia', isCorrect: false, feedback: 'Sauvignon Blanc/Sweet wine.' }
+    ]
+  },
+  {
+    id: 'pq_35_mendoza_altitude',
+    tier: Tier.Tier2,
+    category: 'Argentina',
+    region: 'Mendoza',
+    questionText: 'Malbec in Mendoza thrives in high-altitude vineyards because:',
+    explanationText: 'Altitude lowers the average temperature but maintains high sunlight intensity. The large diurnal range (cool nights) retains acidity and fresh fruit flavours.',
+    mentalMapText: 'Argentina -> Mendoza',
+    options: [
+      { id: 'pq35a', text: 'The altitude increases humidity', isCorrect: false, feedback: 'It is a desert climate.' },
+      { id: 'pq35b', text: 'The altitude provides a high diurnal range, retaining acidity', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq35c', text: 'The altitude protects against hail', isCorrect: false, feedback: 'Hail is actually a major risk at altitude.' },
+      { id: 'pq35d', text: 'The soils are rich in clay', isCorrect: false, feedback: 'Soils are generally alluvial/stony.' }
+    ]
+  },
+
+  // --- Section 7: Sparkling Wines ---
+  {
+    id: 'pq_36_riddling',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Production',
+    questionText: 'In the Traditional Method, what is the purpose of "riddling"?',
+    explanationText: 'Riddling (Remuage) involves rotating and tilting the bottle to move the yeast sediment (lees) into the neck for disgorgement.',
+    mentalMapText: 'Sparkling -> Traditional Method',
+    options: [
+      { id: 'pq36a', text: 'To add the liqueur de tirage', isCorrect: false, feedback: 'Added before 2nd fermentation.' },
+      { id: 'pq36b', text: 'To move the yeast sediment into the neck of the bottle', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq36c', text: 'To freeze the neck of the bottle', isCorrect: false, feedback: 'This is freezing the plug (disgorgement prep).' },
+      { id: 'pq36d', text: 'To determine the sweetness level', isCorrect: false, feedback: 'This is dosage.' }
+    ]
+  },
+  {
+    id: 'pq_37_ancestral_method',
+    tier: Tier.Tier2,
+    category: 'Sparkling',
+    region: 'Production',
+    questionText: 'Which sparkling wine method involves a single fermentation where the wine is bottled before fermentation is complete?',
+    explanationText: 'The Ancestral Method (Pét-Nat) involves bottling partly fermented wine. The fermentation finishes in the bottle, trapping the CO2. (Note: Asti method is also single fermentation but involves filtering/tanks).',
+    mentalMapText: 'Sparkling -> Methods',
+    options: [
+      { id: 'pq37a', text: 'Tank Method', isCorrect: false, feedback: 'Second fermentation in tank.' },
+      { id: 'pq37b', text: 'Transfer Method', isCorrect: false, feedback: 'Bottle 2nd ferment, then tank filtration.' },
+      { id: 'pq37c', text: 'Ancestral Method', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq37d', text: 'Traditional Method', isCorrect: false, feedback: 'Two distinct fermentations.' }
+    ]
+  },
+  {
+    id: 'pq_38_prosecco_grape',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Italy',
+    questionText: 'Which grape variety is the primary component of Prosecco DOC?',
+    explanationText: 'Glera is the semi-aromatic grape variety used for Prosecco.',
+    mentalMapText: 'Sparkling -> Prosecco',
+    options: [
+      { id: 'pq38a', text: 'Muscat', isCorrect: false, feedback: 'Asti.' },
+      { id: 'pq38b', text: 'Glera', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq38c', text: 'Garganega', isCorrect: false, feedback: 'Soave.' },
+      { id: 'pq38d', text: 'Trebbiano', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_39_disgorgement',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Production',
+    questionText: '"Disgorgement" refers to:',
+    explanationText: 'Disgorgement is the ejection of the frozen plug of ice containing the yeast sediment from the neck of the bottle.',
+    mentalMapText: 'Sparkling -> Traditional Method',
+    options: [
+      { id: 'pq39a', text: 'The removal of the yeast deposit from the bottle', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq39b', text: 'The addition of sugar to the final wine', isCorrect: false, feedback: 'Dosage.' },
+      { id: 'pq39c', text: 'The pressing of whole bunches', isCorrect: false, feedback: 'Pressing.' },
+      { id: 'pq39d', text: 'The blending of base wines', isCorrect: false, feedback: 'Assemblage.' }
+    ]
+  },
+  {
+    id: 'pq_40_tank_method_aromatic',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Production',
+    questionText: 'Why is the Tank Method often used for aromatic varieties like Muscat or Riesling?',
+    explanationText: 'The Tank Method avoids the autolytic (biscuit/bread) characters derived from bottle ageing on lees, thus preserving the primary fruit and floral aromas of the grape.',
+    mentalMapText: 'Sparkling -> Tank Method',
+    options: [
+      { id: 'pq40a', text: 'It adds complex biscuit and brioche flavours', isCorrect: false, feedback: 'Traditional method does this.' },
+      { id: 'pq40b', text: 'It is the most expensive method', isCorrect: false, feedback: 'It is cheaper.' },
+      { id: 'pq40c', text: 'It retains the primary fruit characteristics of the grape', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq40d', text: 'It allows for long ageing on the lees', isCorrect: false, feedback: 'Usually short lees contact.' }
+    ]
+  },
+
+  // --- Section 8: Fortified Wines ---
+  {
+    id: 'pq_41_port_fortification',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Douro',
+    questionText: 'When is fortification carried out during the production of Port?',
+    explanationText: 'Port is fortified *during* fermentation (when sugar is still present) to kill the yeast and create a sweet wine.',
+    mentalMapText: 'Fortified -> Port Production',
+    options: [
+      { id: 'pq41a', text: 'Before fermentation begins', isCorrect: false, feedback: 'Mistelle (Vin de Liqueur).' },
+      { id: 'pq41b', text: 'During fermentation, to stop the yeast working', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq41c', text: 'After fermentation is complete', isCorrect: false, feedback: 'Sherry.' },
+      { id: 'pq41d', text: 'Just before bottling', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_42_albariza',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Jerez',
+    questionText: 'Which soil type in Jerez is essential for water retention in the production of Sherry?',
+    explanationText: 'Albariza is the chalky white soil of Jerez that forms a crust to seal in moisture during the hot summers, essential for vine survival.',
+    mentalMapText: 'Spain -> Jerez',
+    options: [
+      { id: 'pq42a', text: 'Schist', isCorrect: false, feedback: 'Douro.' },
+      { id: 'pq42b', text: 'Granite', isCorrect: false, feedback: 'Beaujolais/N Rhône.' },
+      { id: 'pq42c', text: 'Albariza', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq42d', text: 'Terra Rossa', isCorrect: false, feedback: 'Coonawarra.' }
+    ]
+  },
+  {
+    id: 'pq_43_flor',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Jerez',
+    questionText: 'A "Fino" Sherry is aged biologically under a layer of yeast known as:',
+    explanationText: 'Flor is the yeast layer that protects Fino/Manzanilla from oxygen and feeds on alcohol/glycerol to produce unique flavours.',
+    mentalMapText: 'Spain -> Sherry',
+    options: [
+      { id: 'pq43a', text: 'Lees', isCorrect: false, feedback: 'General term for dead yeast.' },
+      { id: 'pq43b', text: 'Flor', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq43c', text: 'Bloom', isCorrect: false, feedback: 'Waxy coating on grape skin.' },
+      { id: 'pq43d', text: 'Must', isCorrect: false, feedback: 'Grape juice.' }
+    ]
+  },
+  {
+    id: 'pq_44_ruby_port',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Douro',
+    questionText: 'Which style of Port is typically aged in large oak vessels (or stainless steel) for a short period to retain fruit colour?',
+    explanationText: 'Ruby Ports are aged protectively (large vessels, limited oxygen) to retain their deep ruby colour and primary fruit characters.',
+    mentalMapText: 'Portugal -> Port Styles',
+    options: [
+      { id: 'pq44a', text: 'Tawny Port', isCorrect: false, feedback: 'Oxidative aging (brown).' },
+      { id: 'pq44b', text: 'Ruby Port', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq44c', text: 'Colheita', isCorrect: false, feedback: 'Oxidative (Vintage Tawny).' },
+      { id: 'pq44d', text: '20-Year-Old Tawny', isCorrect: false, feedback: 'Oxidative.' }
+    ]
+  },
+  {
+    id: 'pq_45_oloroso_abv',
+    tier: Tier.Tier2,
+    category: 'Fortified',
+    region: 'Jerez',
+    questionText: 'Oloroso Sherry typically has an alcohol content of:',
+    explanationText: 'Oloroso is fortified to 17-18% abv to prevent the growth of Flor, ensuring oxidative ageing.',
+    mentalMapText: 'Spain -> Sherry -> Styles',
+    options: [
+      { id: 'pq45a', text: '11-12%', isCorrect: false, feedback: 'Table wine.' },
+      { id: 'pq45b', text: '15-15.5%', isCorrect: false, feedback: 'Fino Sherry.' },
+      { id: 'pq45c', text: '17-18%', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq45d', text: '40%', isCorrect: false, feedback: 'Spirits.' }
+    ]
+  },
+  {
+    id: 'pq_46_px_grape',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Jerez',
+    questionText: 'Which grape variety is used for the production of sweet Pedro Ximénez Sherry?',
+    explanationText: 'Pedro Ximénez (PX) is the grape variety dried in the sun to concentrate sugars for sweet Sherry production.',
+    mentalMapText: 'Spain -> Sherry -> Grapes',
+    options: [
+      { id: 'pq46a', text: 'Palomino', isCorrect: false, feedback: 'Dry Sherry.' },
+      { id: 'pq46b', text: 'Pedro Ximénez', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq46c', text: 'Muscat of Alexandria', isCorrect: false, feedback: 'Moscatel Sherry.' },
+      { id: 'pq46d', text: 'Garnacha', isCorrect: false, feedback: 'Priorat/Rioja.' }
+    ]
+  },
+
+  // --- Section 9: Advanced Labeling & Legislation ---
+  {
+    id: 'pq_47_alsace_grand_cru',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Alsace',
+    questionText: 'If a wine is labelled "Grand Cru" in Alsace, it is most likely:',
+    explanationText: 'Alsace Grand Cru refers to wines from specific named vineyards (51 of them) made from noble varieties (Riesling, Muscat, Gewurz, Pinot Gris).',
+    mentalMapText: 'France -> Alsace',
+    options: [
+      { id: 'pq47a', text: 'A blend of any permitted varieties', isCorrect: false, feedback: 'Must be noble variety (usually).' },
+      { id: 'pq47b', text: 'A dry red wine', isCorrect: false, feedback: 'Mostly White.' },
+      { id: 'pq47c', text: 'A white wine from a single named vineyard site', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq47d', text: 'A sparkling wine made by the traditional method', isCorrect: false, feedback: 'Crémant d\'Alsace.' }
+    ]
+  },
+  {
+    id: 'pq_48_ava_definition',
+    tier: Tier.Tier2,
+    category: 'USA',
+    region: 'Legislation',
+    questionText: 'In the USA, an AVA (American Viticultural Area) legally defines:',
+    explanationText: 'An AVA only defines the geographical boundaries of the region. Unlike French AOCs, it does not dictate yields, grape varieties, or aging.',
+    mentalMapText: 'USA -> Laws',
+    options: [
+      { id: 'pq48a', text: 'The geographical boundary of the region', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq48b', text: 'The minimum aging requirements', isCorrect: false, feedback: '' },
+      { id: 'pq48c', text: 'The permitted grape varieties', isCorrect: false, feedback: '' },
+      { id: 'pq48d', text: 'The maximum yield per hectare', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_49_classico',
+    tier: Tier.Tier1,
+    category: 'Italy',
+    region: 'Legislation',
+    questionText: '"Classico" on an Italian wine label typically indicates:',
+    explanationText: 'Classico refers to the original, historic center of a DOC/G region (e.g., Chianti Classico, Soave Classico), often located on superior hilly terrain.',
+    mentalMapText: 'Italy -> Labelling Terms',
+    options: [
+      { id: 'pq49a', text: 'The wine has been aged for a longer period', isCorrect: false, feedback: 'Riserva.' },
+      { id: 'pq49b', text: 'The wine comes from the original, historic centre of the region', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq49c', text: 'The wine is sweet', isCorrect: false, feedback: 'Dolce/Passito.' },
+      { id: 'pq49d', text: 'The wine is made from international grape varieties', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_50_reserva_spain',
+    tier: Tier.Tier2,
+    category: 'Spain',
+    region: 'Legislation',
+    questionText: 'What is the minimum aging requirement for a "Reserva" wine from Spain (Red)?',
+    explanationText: 'Spanish Red Reserva requires 36 months total aging, with at least 12 months in oak and the rest in bottle.',
+    mentalMapText: 'Spain -> Labelling Terms',
+    options: [
+      { id: 'pq50a', text: '18 months total aging', isCorrect: false, feedback: '' },
+      { id: 'pq50b', text: '24 months total aging', isCorrect: false, feedback: 'Crianza.' },
+      { id: 'pq50c', text: '36 months total aging', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq50d', text: '60 months total aging', isCorrect: false, feedback: 'Gran Reserva.' }
+    ]
+  },
+  {
+    id: 'pq_51_continentality',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which term describes the difference between the average temperature of the hottest and coldest months?',
+    explanationText: 'Continentality is the temperature difference between the coldest and hottest months. Diurnal range is the difference between day and night temperatures.',
+    mentalMapText: 'Viticulture -> Climate',
+    options: [
+      { id: 'pq51a', text: 'Diurnal Range', isCorrect: false, feedback: 'Difference between day and night.' },
+      { id: 'pq51b', text: 'Continentality', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq51c', text: 'Aspect', isCorrect: false, feedback: 'Direction the slope faces.' },
+      { id: 'pq51d', text: 'Latitude', isCorrect: false, feedback: 'Distance from the equator.' }
+    ]
+  },
+  {
+    id: 'pq_52_coulure',
+    tier: Tier.Tier2,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: '"Coulure" is a condition in the vineyard that results in:',
+    explanationText: 'Coulure (fruit set failure) occurs when flowers fail to fertilise and turn into grapes, usually due to cold/wet weather, reducing the overall yield.',
+    mentalMapText: 'Viticulture -> Hazards',
+    options: [
+      { id: 'pq52a', text: 'The grapes turning to vinegar', isCorrect: false, feedback: 'Volatile Acidity.' },
+      { id: 'pq52b', text: 'A reduction in yield due to flowers failing to fertilise', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq52c', text: 'Uneven ripening within a single bunch (Hen and Chicken)', isCorrect: false, feedback: 'Millerandage.' },
+      { id: 'pq52d', text: 'The leaves turning yellow due to nutrient deficiency', isCorrect: false, feedback: 'Chlorosis.' }
+    ]
+  },
+  {
+    id: 'pq_53_bordeaux_mixture',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which of the following is a fungal disease that can be controlled using "Bordeaux Mixture" (copper sulphate)?',
+    explanationText: 'Downy Mildew thrives in warm, humid conditions and is traditionally treated with copper-based sprays (Bordeaux Mixture).',
+    mentalMapText: 'Viticulture -> Diseases',
+    options: [
+      { id: 'pq53a', text: 'Downy Mildew', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq53b', text: 'Powdery Mildew', isCorrect: false, feedback: 'Treated with Sulphur.' },
+      { id: 'pq53c', text: 'Fanleaf Virus', isCorrect: false, feedback: 'No cure; spread by nematodes.' },
+      { id: 'pq53d', text: 'Pierce’s Disease', isCorrect: false, feedback: 'Bacterial; spread by sharpshooters.' }
+    ]
+  },
+  {
+    id: 'pq_54_south_slope',
+    tier: Tier.Tier2,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'In the Northern Hemisphere, a south-facing slope is beneficial because:',
+    explanationText: 'South-facing slopes intercept solar radiation at a more perpendicular angle, maximizing heat and light absorption which aids ripening in cool climates.',
+    mentalMapText: 'Viticulture -> Topography',
+    options: [
+      { id: 'pq54a', text: 'It receives the least amount of sunlight, preserving acidity', isCorrect: false, feedback: 'North-facing does this.' },
+      { id: 'pq54b', text: 'It intercepts solar radiation at a more direct angle, aiding ripening', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq54c', text: 'It is more susceptible to frost damage', isCorrect: false, feedback: 'Slopes aid air drainage, reducing frost risk.' },
+      { id: 'pq54d', text: 'It retains water more effectively than flat land', isCorrect: false, feedback: 'Slopes are freer draining.' }
+    ]
+  },
+  {
+    id: 'pq_55_flood_irrigation',
+    tier: Tier.Tier1,
+    category: 'Viticulture',
+    region: 'General',
+    questionText: 'Which irrigation technique involves flooding the vineyard and is only suitable for flat land with abundant water?',
+    explanationText: 'Flood irrigation is cheap but requires flat terrain and large volumes of water (common in places like Mendoza or parts of Chile historically).',
+    mentalMapText: 'Viticulture -> Irrigation',
+    options: [
+      { id: 'pq55a', text: 'Drip irrigation', isCorrect: false, feedback: 'Most efficient, works on slopes.' },
+      { id: 'pq55b', text: 'Sprinkler irrigation', isCorrect: false, feedback: 'Overhead spray.' },
+      { id: 'pq55c', text: 'Flood irrigation', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq55d', text: 'Dry farming', isCorrect: false, feedback: 'No irrigation.' }
+    ]
+  },
+
+  // --- Section 2: Advanced Vinification ---
+  {
+    id: 'pq_56_press_wine',
+    tier: Tier.Tier2,
+    category: 'Vinification',
+    region: 'General',
+    questionText: '"Press Wine" (the fraction obtained after pressing) differs from "Free Run Juice" because it:',
+    explanationText: 'Press wine is extracted by mechanical pressure, releasing more tannin and colour from the skins compared to free run juice.',
+    mentalMapText: 'Vinification -> Pressing',
+    options: [
+      { id: 'pq56a', text: 'Is higher in acidity and lower in tannin', isCorrect: false, feedback: 'Press wine is lower in acid.' },
+      { id: 'pq56b', text: 'Is lower in colour and tannin', isCorrect: false, feedback: 'Press wine has more colour/tannin.' },
+      { id: 'pq56c', text: 'Is higher in tannin and colour', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq56d', text: 'Has no flavour compounds', isCorrect: false, feedback: 'It has intense flavours.' }
+    ]
+  },
+  {
+    id: 'pq_57_diacetyl',
+    tier: Tier.Tier3,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'What is the primary compound responsible for the "buttery" flavour in Chardonnay that has undergone Malolactic Conversion?',
+    explanationText: 'Diacetyl is the specific chemical byproduct of Malolactic Conversion that smells of butter/cream.',
+    mentalMapText: 'Vinification -> Compounds',
+    options: [
+      { id: 'pq57a', text: 'Methoxypyrazine', isCorrect: false, feedback: 'Green pepper (Sauvignon/Cabernet).' },
+      { id: 'pq57b', text: 'Rotundone', isCorrect: false, feedback: 'Black pepper (Syrah).' },
+      { id: 'pq57c', text: 'Diacetyl', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq57d', text: 'Linalool', isCorrect: false, feedback: 'Floral/Muscat terpene.' }
+    ]
+  },
+  {
+    id: 'pq_58_cold_stabilization',
+    tier: Tier.Tier2,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'Which process is used to prevent the formation of glass-like crystals (tartrates) in the bottle?',
+    explanationText: 'Cold stabilization involves chilling the wine to force tartrate crystals to precipitate before bottling, so they don\'t form later in the consumer\'s fridge.',
+    mentalMapText: 'Vinification -> Stabilization',
+    options: [
+      { id: 'pq58a', text: 'Sterile Filtration', isCorrect: false, feedback: 'Removes yeast/bacteria.' },
+      { id: 'pq58b', text: 'Cold Stabilization', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq58c', text: 'Racking', isCorrect: false, feedback: 'Removes gross sediment.' },
+      { id: 'pq58d', text: 'Chaptalisation', isCorrect: false, feedback: 'Adding sugar.' }
+    ]
+  },
+  {
+    id: 'pq_59_semi_carbonic',
+    tier: Tier.Tier2,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'Semi-Carbonic Maceration is the standard technique used for which wine?',
+    explanationText: 'Semi-carbonic maceration creates fruity, low-tannin wines with bubblegum/kirsch notes, the hallmark style of inexpensive Beaujolais.',
+    mentalMapText: 'Vinification -> Red Winemaking',
+    options: [
+      { id: 'pq59a', text: 'Premium Pinot Noir from Burgundy', isCorrect: false, feedback: 'Traditional fermentation.' },
+      { id: 'pq59b', text: 'Inexpensive Beaujolais', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq59c', text: 'Barossa Shiraz', isCorrect: false, feedback: 'Traditional fermentation.' },
+      { id: 'pq59d', text: 'Rioja Gran Reserva', isCorrect: false, feedback: 'Traditional fermentation + Long Oak.' }
+    ]
+  },
+  {
+    id: 'pq_60_so2_roles',
+    tier: Tier.Tier2,
+    category: 'Vinification',
+    region: 'General',
+    questionText: 'In addition to acting as an antiseptic, Sulphur Dioxide (SO2) acts as:',
+    explanationText: 'SO2 is an antioxidant (protects against oxidation) and an antiseptic (kills unwanted microbes).',
+    mentalMapText: 'Vinification -> Additives',
+    options: [
+      { id: 'pq60a', text: 'An antioxidant', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq60b', text: 'A clarifying agent', isCorrect: false, feedback: 'Fining agents do this.' },
+      { id: 'pq60c', text: 'A sweetening agent', isCorrect: false, feedback: 'RCGM/Sugar does this.' },
+      { id: 'pq60d', text: 'A colouring agent', isCorrect: false, feedback: 'Mega Purple does this.' }
+    ]
+  },
+
+  // --- Section 3: France (The Deeper Cuts) ---
+  {
+    id: 'pq_61_muscadet_sur_lie',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Loire',
+    questionText: '"Muscadet Sèvre et Maine Sur Lie" is bottled directly from the lees to add:',
+    explanationText: 'Sur Lie aging adds texture, creaminess, and a slight spritz (freshness) to the otherwise neutral Melon Blanc grape.',
+    mentalMapText: 'France -> Loire -> Muscadet',
+    options: [
+      { id: 'pq61a', text: 'Sweetness and alcohol', isCorrect: false, feedback: 'It remains dry.' },
+      { id: 'pq61b', text: 'Texture, body, and freshness', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq61c', text: 'Oak flavours and tannin', isCorrect: false, feedback: 'Sur lie is typically in inert vessels.' },
+      { id: 'pq61d', text: 'Red fruit aromas', isCorrect: false, feedback: 'It is a white wine.' }
+    ]
+  },
+  {
+    id: 'pq_62_volnay_red',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Burgundy',
+    questionText: 'Which village in the Côte de Beaune is renowned for producing only red wines?',
+    explanationText: 'Volnay and Pommard are famous Côte de Beaune villages that produce only Red wines (Pinot Noir). Most others (Meursault, Puligny) are white-dominant.',
+    mentalMapText: 'France -> Burgundy -> Cote de Beaune',
+    options: [
+      { id: 'pq62a', text: 'Meursault', isCorrect: false, feedback: 'Famous for White.' },
+      { id: 'pq62b', text: 'Puligny-Montrachet', isCorrect: false, feedback: 'Famous for White.' },
+      { id: 'pq62c', text: 'Volnay', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq62d', text: 'Aloxe-Corton', isCorrect: false, feedback: 'Produces both (Corton-Charlemagne is white).' }
+    ]
+  },
+  {
+    id: 'pq_63_beaujolais_crus_age',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Beaujolais',
+    questionText: 'Which Crus of Beaujolais are known for the most powerful wines with the greatest aging potential?',
+    explanationText: 'Morgon and Moulin-à-Vent are the most structured, tannic, and age-worthy of the 10 Crus.',
+    mentalMapText: 'France -> Beaujolais -> Crus',
+    options: [
+      { id: 'pq63a', text: 'Fleurie and Chiroubles', isCorrect: false, feedback: 'Known for elegance/perfume.' },
+      { id: 'pq63b', text: 'Morgon and Moulin-à-Vent', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq63c', text: 'Brouilly and Régnié', isCorrect: false, feedback: 'Lighter, earlier drinking.' },
+      { id: 'pq63d', text: 'Saint-Amour and Chénas', isCorrect: false, feedback: 'Lighter style.' }
+    ]
+  },
+  {
+    id: 'pq_64_pomerol_grape',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Bordeaux',
+    questionText: 'The dominant grape variety in the blend of a generic AOC Pomerol wine is:',
+    explanationText: 'Pomerol (Right Bank) is dominated by Merlot (often 80%+), with Cabernet Franc playing a supporting role.',
+    mentalMapText: 'France -> Bordeaux -> Right Bank',
+    options: [
+      { id: 'pq64a', text: 'Cabernet Sauvignon', isCorrect: false, feedback: 'Left Bank.' },
+      { id: 'pq64b', text: 'Merlot', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq64c', text: 'Cabernet Franc', isCorrect: false, feedback: 'Important, but usually secondary to Merlot.' },
+      { id: 'pq64d', text: 'Malbec', isCorrect: false, feedback: 'Rare minor blending grape.' }
+    ]
+  },
+  {
+    id: 'pq_65_bandol_mourvedre',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Provence',
+    questionText: 'Bandol AOC in Provence requires a minimum of 50% of which grape variety in its red blends?',
+    explanationText: 'Mourvèdre thrives in the heat of Bandol and must constitute 50-95% of the red blend.',
+    mentalMapText: 'France -> Provence -> Bandol',
+    options: [
+      { id: 'pq65a', text: 'Grenache', isCorrect: false, feedback: 'Permitted, but not the primary.' },
+      { id: 'pq65b', text: 'Syrah', isCorrect: false, feedback: 'Permitted, but not the primary.' },
+      { id: 'pq65c', text: 'Mourvèdre', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq65d', text: 'Cinsault', isCorrect: false, feedback: 'Mainly for Rosé.' }
+    ]
+  },
+  {
+    id: 'pq_66_coteaux_du_layon',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Loire',
+    questionText: 'Coteaux du Layon is a sweet wine made from which grape variety?',
+    explanationText: 'Coteaux du Layon (Anjou) is a sweet, botrytised wine made from 100% Chenin Blanc.',
+    mentalMapText: 'France -> Loire -> Sweet Wines',
+    options: [
+      { id: 'pq66a', text: 'Sauvignon Blanc', isCorrect: false, feedback: 'Dry wines.' },
+      { id: 'pq66b', text: 'Semillon', isCorrect: false, feedback: 'Bordeaux/Monbazillac.' },
+      { id: 'pq66c', text: 'Chenin Blanc', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq66d', text: 'Muscadet', isCorrect: false, feedback: 'Dry Melon Blanc.' }
+    ]
+  },
+  {
+    id: 'pq_67_condrieu',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Rhône',
+    questionText: 'In the Northern Rhône, "Condrieu" is an appellation dedicated exclusively to:',
+    explanationText: 'Condrieu is 100% Viognier.',
+    mentalMapText: 'France -> Rhône -> Condrieu',
+    options: [
+      { id: 'pq67a', text: 'Red wines from Syrah', isCorrect: false, feedback: 'Côte Rôtie/Hermitage.' },
+      { id: 'pq67b', text: 'White wines from Marsanne', isCorrect: false, feedback: 'Hermitage/St Joseph.' },
+      { id: 'pq67c', text: 'White wines from Viognier', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq67d', text: 'Sparkling wines', isCorrect: false, feedback: 'Saint-Péray.' }
+    ]
+  },
+
+  // --- Section 4: Italy (Central & South) ---
+  {
+    id: 'pq_68_verdicchio_region',
+    tier: Tier.Tier1,
+    category: 'Italy',
+    region: 'Marche',
+    questionText: '"Verdicchio dei Castelli di Jesi" is a white wine produced in which Italian region?',
+    explanationText: 'The Marche region on the east coast is famous for Verdicchio.',
+    mentalMapText: 'Italy -> Marche',
+    options: [
+      { id: 'pq68a', text: 'Tuscany', isCorrect: false, feedback: 'Vernaccia.' },
+      { id: 'pq68b', text: 'Veneto', isCorrect: false, feedback: 'Soave.' },
+      { id: 'pq68c', text: 'Marche', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq68d', text: 'Umbria', isCorrect: false, feedback: 'Orvieto.' }
+    ]
+  },
+  {
+    id: 'pq_69_etna_red',
+    tier: Tier.Tier2,
+    category: 'Italy',
+    region: 'Sicily',
+    questionText: 'The red wines of Etna DOC are made primarily from:',
+    explanationText: 'Nerello Mascalese is the high-quality grape of Mt Etna, often compared to Pinot Noir/Nebbiolo.',
+    mentalMapText: 'Italy -> Sicily',
+    options: [
+      { id: 'pq69a', text: 'Aglianico', isCorrect: false, feedback: 'Campania/Basilicata.' },
+      { id: 'pq69b', text: 'Nerello Mascalese', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq69c', text: 'Primitivo', isCorrect: false, feedback: 'Puglia.' },
+      { id: 'pq69d', text: 'Nero d\'Avola', isCorrect: false, feedback: 'Sicily (but not primary for Etna).' }
+    ]
+  },
+  {
+    id: 'pq_70_gran_selezione',
+    tier: Tier.Tier3,
+    category: 'Italy',
+    region: 'Tuscany',
+    questionText: 'A "Chianti Classico Gran Selezione" must be made from:',
+    explanationText: 'Gran Selezione is the top tier, requiring estate-grown grapes (no bought-in fruit) and 30 months aging.',
+    mentalMapText: 'Italy -> Chianti Classico',
+    options: [
+      { id: 'pq70a', text: 'Estate-grown grapes only', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq70b', text: '100% Merlot', isCorrect: false, feedback: 'Must be Sangiovese dominant.' },
+      { id: 'pq70c', text: 'Grapes dried for 3 months', isCorrect: false, feedback: 'Amarone style.' },
+      { id: 'pq70d', text: 'Purchased grapes from the wider Chianti zone', isCorrect: false, feedback: 'Must be Estate grown.' }
+    ]
+  },
+  {
+    id: 'pq_71_taurasi',
+    tier: Tier.Tier2,
+    category: 'Italy',
+    region: 'Campania',
+    questionText: 'Taurasi DOCG is a premium red wine from Campania made from:',
+    explanationText: 'Taurasi is often called the "Barolo of the South" and is made from Aglianico.',
+    mentalMapText: 'Italy -> Campania',
+    options: [
+      { id: 'pq71a', text: 'Sangiovese', isCorrect: false, feedback: 'Tuscany.' },
+      { id: 'pq71b', text: 'Nebbiolo', isCorrect: false, feedback: 'Piemonte.' },
+      { id: 'pq71c', text: 'Aglianico', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq71d', text: 'Montepulciano', isCorrect: false, feedback: 'Abruzzo.' }
+    ]
+  },
+
+  // --- Section 5: Spain, Portugal & Greece ---
+  {
+    id: 'pq_72_priorat_soil',
+    tier: Tier.Tier2,
+    category: 'Spain',
+    region: 'Priorat',
+    questionText: 'The distinctive slate soils of Priorat are known locally as:',
+    explanationText: 'Llicorella is the local name for the red/black slate that retains heat and reflects light in Priorat.',
+    mentalMapText: 'Spain -> Priorat',
+    options: [
+      { id: 'pq72a', text: 'Albariza', isCorrect: false, feedback: 'Jerez (Chalk).' },
+      { id: 'pq72b', text: 'Galets', isCorrect: false, feedback: 'Rhône (Stones).' },
+      { id: 'pq72c', text: 'Llicorella', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq72d', text: 'Terra Rossa', isCorrect: false, feedback: 'Coonawarra (Clay/Limestone).' }
+    ]
+  },
+  {
+    id: 'pq_73_baga',
+    tier: Tier.Tier2,
+    category: 'Portugal',
+    region: 'Bairrada',
+    questionText: 'Which Portuguese region is associated with the Baga grape variety?',
+    explanationText: 'Bairrada produces high-acid, high-tannin reds from Baga.',
+    mentalMapText: 'Portugal -> Bairrada',
+    options: [
+      { id: 'pq73a', text: 'Dão', isCorrect: false, feedback: 'Touriga Nacional.' },
+      { id: 'pq73b', text: 'Bairrada', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq73c', text: 'Alentejo', isCorrect: false, feedback: 'Aragonez/Trincadeira.' },
+      { id: 'pq73d', text: 'Vinho Verde', isCorrect: false, feedback: 'Alvarinho/Loureiro.' }
+    ]
+  },
+  {
+    id: 'pq_74_pergola_spain',
+    tier: Tier.Tier2,
+    category: 'Spain',
+    region: 'Galicia',
+    questionText: 'In Rías Baixas, vines are traditionally trained on pergolas (parras) to:',
+    explanationText: 'The humid climate of Rías Baixas makes rot a major risk. Pergolas lift the canopy for airflow.',
+    mentalMapText: 'Spain -> Rías Baixas',
+    options: [
+      { id: 'pq74a', text: 'Protect them from the hot sun', isCorrect: false, feedback: 'Rias Baixas is cool/wet.' },
+      { id: 'pq74b', text: 'Improve air circulation and prevent rot in the humid climate', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq74c', text: 'Allow for machine harvesting', isCorrect: false, feedback: 'Pergolas are usually hand harvested.' },
+      { id: 'pq74d', text: 'Maximise water retention', isCorrect: false, feedback: 'It is a wet region.' }
+    ]
+  },
+  {
+    id: 'pq_75_naoussa',
+    tier: Tier.Tier1,
+    category: 'Greece',
+    region: 'Macedonia',
+    questionText: 'Naoussa PDO in Greece produces red wines from which high-tannin, high-acid grape variety?',
+    explanationText: 'Xinomavro ("Acid Black") is the grape of Naoussa, often compared to Nebbiolo.',
+    mentalMapText: 'Greece -> Naoussa',
+    options: [
+      { id: 'pq75a', text: 'Agiorgitiko', isCorrect: false, feedback: 'Nemea (smoother).' },
+      { id: 'pq75b', text: 'Xinomavro', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq75c', text: 'Assyrtiko', isCorrect: false, feedback: 'White grape (Santorini).' },
+      { id: 'pq75d', text: 'Moschofilero', isCorrect: false, feedback: 'Pink skinned/White wine.' }
+    ]
+  },
+
+  // --- Section 6: Germany & Austria ---
+  {
+    id: 'pq_76_grosses_gewachs',
+    tier: Tier.Tier2,
+    category: 'Germany',
+    region: 'VDP',
+    questionText: 'Under VDP classification, a "Grosses Gewächs" (GG) refers to:',
+    explanationText: 'GG is the top classification for DRY wines from the best vineyards (Grosse Lage).',
+    mentalMapText: 'Germany -> VDP',
+    options: [
+      { id: 'pq76a', text: 'A sweet wine from a top vineyard', isCorrect: false, feedback: 'That would be Prädikat (e.g. Auslese).' },
+      { id: 'pq76b', text: 'A dry wine from a Grosse Lage (top) vineyard', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq76c', text: 'An entry-level estate wine', isCorrect: false, feedback: 'Gutswein.' },
+      { id: 'pq76d', text: 'A sparkling wine', isCorrect: false, feedback: 'Sekt.' }
+    ]
+  },
+  {
+    id: 'pq_77_blaufrankisch',
+    tier: Tier.Tier2,
+    category: 'Austria',
+    region: 'General',
+    questionText: 'The grape variety "Blaufränkisch" is known for producing:',
+    explanationText: 'Blaufränkisch produces medium to full-bodied reds with high acidity, noticeable tannin, and peppery/black fruit spice.',
+    mentalMapText: 'Austria -> Grapes',
+    options: [
+      { id: 'pq77a', text: 'Light bodied, low tannin red wines', isCorrect: false, feedback: 'Zweigelt is lighter, or St Laurent.' },
+      { id: 'pq77b', text: 'Medium to full bodied red wines with high acidity and spicy flavours', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq77c', text: 'Sweet white wines affected by botrytis', isCorrect: false, feedback: '' },
+      { id: 'pq77d', text: 'Floral aromatic white wines', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_78_franken',
+    tier: Tier.Tier1,
+    category: 'Germany',
+    region: 'Franken',
+    questionText: 'Which German region is most associated with the Silvaner grape variety and flask-shaped bottles (Bocksbeutel)?',
+    explanationText: 'Franken is famous for earthy, dry Silvaner bottled in the distinctive Bocksbeutel.',
+    mentalMapText: 'Germany -> Franken',
+    options: [
+      { id: 'pq78a', text: 'Mosel', isCorrect: false, feedback: 'Riesling.' },
+      { id: 'pq78b', text: 'Rheingau', isCorrect: false, feedback: 'Riesling.' },
+      { id: 'pq78c', text: 'Franken', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq78d', text: 'Pfalz', isCorrect: false, feedback: 'Riesling.' }
+    ]
+  },
+
+  // --- Section 7: New World (USA, Aus, NZ, SA, Chile, Arg) ---
+  {
+    id: 'pq_79_willamette',
+    tier: Tier.Tier1,
+    category: 'USA',
+    region: 'Oregon',
+    questionText: 'The Willamette Valley in Oregon is most famous for:',
+    explanationText: 'Willamette is a cool climate region renowned for world-class Pinot Noir.',
+    mentalMapText: 'USA -> Oregon',
+    options: [
+      { id: 'pq79a', text: 'Full-bodied Cabernet Sauvignon', isCorrect: false, feedback: 'Too cool.' },
+      { id: 'pq79b', text: 'Premium Pinot Noir', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq79c', text: 'Inexpensive Chardonnay', isCorrect: false, feedback: '' },
+      { id: 'pq79d', text: 'Zinfandel', isCorrect: false, feedback: 'Too cool.' }
+    ]
+  },
+  {
+    id: 'pq_80_lodi_zin',
+    tier: Tier.Tier1,
+    category: 'USA',
+    region: 'California',
+    questionText: 'Which AVA in California is known for having some of the oldest Zinfandel vines in the world?',
+    explanationText: 'Lodi (Central Valley) is home to ancient, own-rooted Zinfandel vines that produce concentrated wines.',
+    mentalMapText: 'USA -> California -> Lodi',
+    options: [
+      { id: 'pq80a', text: 'Lodi', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq80b', text: 'Russian River Valley', isCorrect: false, feedback: 'Pinot/Chard.' },
+      { id: 'pq80c', text: 'Anderson Valley', isCorrect: false, feedback: 'Sparkling/Pinot.' },
+      { id: 'pq80d', text: 'Stag\'s Leap District', isCorrect: false, feedback: 'Cabernet.' }
+    ]
+  },
+  {
+    id: 'pq_81_terra_rossa_grape',
+    tier: Tier.Tier1,
+    category: 'Australia',
+    region: 'Coonawarra',
+    questionText: 'The "Terra Rossa" soil of Coonawarra is famous for producing:',
+    explanationText: 'Coonawarra Cabernet Sauvignon on Terra Rossa soil is Australia\'s most famous pairing.',
+    mentalMapText: 'Australia -> Coonawarra',
+    options: [
+      { id: 'pq81a', text: 'Pinot Noir', isCorrect: false, feedback: 'Too warm/flat.' },
+      { id: 'pq81b', text: 'Cabernet Sauvignon', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq81c', text: 'Shiraz', isCorrect: false, feedback: 'Grown, but Cab is the star.' },
+      { id: 'pq81d', text: 'Riesling', isCorrect: false, feedback: 'Clare/Eden.' }
+    ]
+  },
+  {
+    id: 'pq_82_hunter_semillon_age',
+    tier: Tier.Tier2,
+    category: 'Australia',
+    region: 'Hunter Valley',
+    questionText: 'Which Australian region is famous for its unique style of Semillon that is light alcohol and unoaked in youth but develops toast and honey with age?',
+    explanationText: 'This is the classic definition of Hunter Valley Semillon.',
+    mentalMapText: 'Australia -> Hunter Valley',
+    options: [
+      { id: 'pq82a', text: 'Margaret River', isCorrect: false, feedback: 'Sem/Sauv Blends.' },
+      { id: 'pq82b', text: 'Barossa Valley', isCorrect: false, feedback: 'Full bodied Semillon.' },
+      { id: 'pq82c', text: 'Hunter Valley', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq82d', text: 'Yarra Valley', isCorrect: false, feedback: 'Chard/Pinot.' }
+    ]
+  },
+  {
+    id: 'pq_83_carmenere_green',
+    tier: Tier.Tier2,
+    category: 'Chile',
+    region: 'General',
+    questionText: 'The signature red grape variety of Chile, Carmenère, often displays green pepper notes if:',
+    explanationText: 'Carmenère is late ripening. If harvested before fully ripe, high levels of methoxypyrazines cause green pepper/herbaceous notes.',
+    mentalMapText: 'Chile -> Grapes',
+    options: [
+      { id: 'pq83a', text: 'It is harvested too late', isCorrect: false, feedback: 'Would be jammy.' },
+      { id: 'pq83b', text: 'It is grown in a hot climate', isCorrect: false, feedback: 'It needs a warm climate.' },
+      { id: 'pq83c', text: 'It is harvested when not fully ripe', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq83d', text: 'It is aged in American oak', isCorrect: false, feedback: 'Adds vanilla/coconut.' }
+    ]
+  },
+  {
+    id: 'pq_84_pinotage_parent',
+    tier: Tier.Tier1,
+    category: 'South Africa',
+    region: 'Grapes',
+    questionText: 'Pinotage, South Africa\'s signature red variety, is a crossing of:',
+    explanationText: 'Pinotage is a crossing of Pinot Noir and Cinsault (formerly known as Hermitage).',
+    mentalMapText: 'South Africa -> Grapes',
+    options: [
+      { id: 'pq84a', text: 'Pinot Noir x Cinsault', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq84b', text: 'Pinot Noir x Cabernet Sauvignon', isCorrect: false, feedback: '' },
+      { id: 'pq84c', text: 'Merlot x Syrah', isCorrect: false, feedback: '' },
+      { id: 'pq84d', text: 'Grenache x Cinsault', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_85_torrontes_location',
+    tier: Tier.Tier1,
+    category: 'Argentina',
+    region: 'Salta',
+    questionText: 'Torrontés is an aromatic white grape variety that thrives in the high-altitude vineyards of:',
+    explanationText: 'Cafayate (in Salta) is the spiritual home of Torrontés, where extreme altitude preserves its floral aromatics.',
+    mentalMapText: 'Argentina -> Salta',
+    options: [
+      { id: 'pq85a', text: 'Cafayate (Salta)', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq85b', text: 'Mendoza', isCorrect: false, feedback: 'Malbec.' },
+      { id: 'pq85c', text: 'Patagonia', isCorrect: false, feedback: 'Pinot Noir.' },
+      { id: 'pq85d', text: 'Casablanca Valley', isCorrect: false, feedback: 'Chile.' }
+    ]
+  },
+  {
+    id: 'pq_86_hawkes_bay',
+    tier: Tier.Tier1,
+    category: 'New Zealand',
+    region: 'North Island',
+    questionText: 'Hawke\'s Bay in New Zealand is best known for:',
+    explanationText: 'Hawke\'s Bay (warmest region) is famous for Bordeaux Blends (Merlot/Cab) and Syrah.',
+    mentalMapText: 'New Zealand -> Hawke\'s Bay',
+    options: [
+      { id: 'pq86a', text: 'Sauvignon Blanc', isCorrect: false, feedback: 'Marlborough.' },
+      { id: 'pq86b', text: 'Bordeaux-style red blends and Syrah', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq86c', text: 'Pinot Noir', isCorrect: false, feedback: 'Martinborough/Central Otago.' },
+      { id: 'pq86d', text: 'Sparkling Wine', isCorrect: false, feedback: 'Marlborough.' }
+    ]
+  },
+
+  // --- Section 8: Sparkling & Fortified Wines ---
+  {
+    id: 'pq_87_asti_method',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Italy',
+    questionText: 'Which method is used to produce Asti DOCG?',
+    explanationText: 'Asti uses the Asti Method: a single tank fermentation arrested by chilling to retain sugar and create a sweet, low-alcohol sparkling wine.',
+    mentalMapText: 'Sparkling -> Asti',
+    options: [
+      { id: 'pq87a', text: 'Traditional Method', isCorrect: false, feedback: 'Franciacorta/Trento.' },
+      { id: 'pq87b', text: 'Tank Method', isCorrect: false, feedback: 'Prosecco (Dry/Off-dry).' },
+      { id: 'pq87c', text: 'Asti Method (Single fermentation in tank)', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq87d', text: 'Carbonation', isCorrect: false, feedback: 'Lowest quality.' }
+    ]
+  },
+  {
+    id: 'pq_88_cap_classique',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'South Africa',
+    questionText: '"Cap Classique" is the term used for traditional method sparkling wines from:',
+    explanationText: 'Méthode Cap Classique (MCC) is South Africa\'s term for Traditional Method sparkling.',
+    mentalMapText: 'South Africa -> Sparkling',
+    options: [
+      { id: 'pq88a', text: 'California', isCorrect: false, feedback: '' },
+      { id: 'pq88b', text: 'South Africa', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq88c', text: 'Australia', isCorrect: false, feedback: '' },
+      { id: 'pq88d', text: 'New Zealand', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_89_lbv_age',
+    tier: Tier.Tier2,
+    category: 'Fortified',
+    region: 'Douro',
+    questionText: 'A "Late Bottled Vintage" (LBV) Port is aged in wood for how long before bottling?',
+    explanationText: 'LBV is bottled 4-6 years after harvest (later than Vintage Port, which is 2 years).',
+    mentalMapText: 'Portugal -> Port Styles',
+    options: [
+      { id: 'pq89a', text: '2 years', isCorrect: false, feedback: 'Vintage Port.' },
+      { id: 'pq89b', text: '4 to 6 years', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq89c', text: '10 years', isCorrect: false, feedback: 'Aged Tawny category.' },
+      { id: 'pq89d', text: '40 years', isCorrect: false, feedback: 'Aged Tawny category.' }
+    ]
+  },
+  {
+    id: 'pq_90_pale_cream',
+    tier: Tier.Tier2,
+    category: 'Fortified',
+    region: 'Jerez',
+    questionText: '"Pale Cream" Sherry is essentially:',
+    explanationText: 'Pale Cream is a Fino (biologically aged) that has been sweetened with RCGM.',
+    mentalMapText: 'Spain -> Sherry -> Styles',
+    options: [
+      { id: 'pq90a', text: 'A Fino that has been sweetened', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq90b', text: 'An Oloroso that has been sweetened', isCorrect: false, feedback: 'Cream Sherry.' },
+      { id: 'pq90c', text: 'A naturally sweet Pedro Ximénez', isCorrect: false, feedback: 'PX.' },
+      { id: 'pq90d', text: 'A blend of Amontillado and Muscat', isCorrect: false, feedback: 'Medium Sherry.' }
+    ]
+  },
+  {
+    id: 'pq_91_beaumes_de_venise',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Rhône',
+    questionText: 'Muscat de Beaumes-de-Venise is a Vin Doux Naturel (VDN) produced in:',
+    explanationText: 'Beaumes-de-Venise is an appellation in the Southern Rhône famous for fortified Muscat.',
+    mentalMapText: 'France -> Rhône -> Fortified',
+    options: [
+      { id: 'pq91a', text: 'The Loire Valley', isCorrect: false, feedback: 'Coteaux du Layon (Sweet, not fortified).' },
+      { id: 'pq91b', text: 'Southern Rhône', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq91c', text: 'Languedoc', isCorrect: false, feedback: 'Muscat de Frontignan.' },
+      { id: 'pq91d', text: 'Roussillon', isCorrect: false, feedback: 'Banyuls/Maury.' }
+    ]
+  },
+  {
+    id: 'pq_92_rutherglen_grape',
+    tier: Tier.Tier1,
+    category: 'Fortified',
+    region: 'Rutherglen',
+    questionText: 'Rutherglen in Australia is famous for fortified wines made from:',
+    explanationText: 'Rutherglen Muscat (Muscat à Petits Grains Rouge) is the signature fortified wine of the region.',
+    mentalMapText: 'Australia -> Rutherglen',
+    options: [
+      { id: 'pq92a', text: 'Shiraz', isCorrect: false, feedback: '' },
+      { id: 'pq92b', text: 'Muscat', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq92c', text: 'Grenache', isCorrect: false, feedback: '' },
+      { id: 'pq92d', text: 'Semillon', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_93_remuage',
+    tier: Tier.Tier1,
+    category: 'Sparkling',
+    region: 'Terminology',
+    questionText: 'The term "Remuage" in sparkling wine production refers to:',
+    explanationText: 'Remuage is the French term for "Riddling" (moving yeast to the neck).',
+    mentalMapText: 'Sparkling -> Production',
+    options: [
+      { id: 'pq93a', text: 'Adding the dosage', isCorrect: false, feedback: 'Liqueur d\'expédition.' },
+      { id: 'pq93b', text: 'Riddling (moving yeast to the neck)', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq93c', text: 'Disgorgement', isCorrect: false, feedback: 'Dégorgement.' },
+      { id: 'pq93d', text: 'Pressing the grapes', isCorrect: false, feedback: 'Pressurage.' }
+    ]
+  },
+
+  // --- Section 9: Trade & Law Definitions ---
+  {
+    id: 'pq_94_pgi_vs_pdo',
+    tier: Tier.Tier2,
+    category: 'Legislation',
+    region: 'EU',
+    questionText: 'Which of the following statements about PGI (Protected Geographical Indication) wines is true compared to PDO?',
+    explanationText: 'PGI (IGP) regulations are generally more flexible than PDO (AOP), allowing higher yields, a wider range of varieties (including international ones), and larger geographical areas.',
+    mentalMapText: 'Legislation -> EU Classifications',
+    options: [
+      { id: 'pq94a', text: 'They have stricter regulations on yields', isCorrect: false, feedback: 'PDO is stricter.' },
+      { id: 'pq94b', text: 'They typically allow for a wider range of grape varieties and larger geographical areas', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq94c', text: 'They must always be bottled in the region of production', isCorrect: false, feedback: 'PDO often requires this; PGI often does not.' },
+      { id: 'pq94d', text: 'They are always more expensive', isCorrect: false, feedback: 'Usually cheaper.' }
+    ]
+  },
+  {
+    id: 'pq_95_tokaji_aszu_sugar',
+    tier: Tier.Tier3,
+    category: 'Hungary',
+    region: 'Tokaj',
+    questionText: 'As of 2013, the minimum residual sugar level for a wine labelled Tokaji Aszú is equivalent to:',
+    explanationText: 'The 2013 law abolished the 3 and 4 Puttonyos categories. All "Aszú" must now have a minimum of 120 g/L sugar, which is the equivalent of the old 5 Puttonyos level.',
+    mentalMapText: 'Hungary -> Tokaj -> Law',
+    options: [
+      { id: 'pq95a', text: '3 Puttonyos', isCorrect: false, feedback: '60 g/L (Abolished category).' },
+      { id: 'pq95b', text: '4 Puttonyos', isCorrect: false, feedback: '90 g/L (Abolished category).' },
+      { id: 'pq95c', text: '5 Puttonyos', isCorrect: true, feedback: 'Correct. (120 g/L).' },
+      { id: 'pq95d', text: '6 Puttonyos', isCorrect: false, feedback: '150 g/L.' }
+    ]
+  },
+  {
+    id: 'pq_96_single_quinta',
+    tier: Tier.Tier2,
+    category: 'Fortified',
+    region: 'Douro',
+    questionText: 'A "Single Quinta Vintage Port" is:',
+    explanationText: 'SQVPs are made from a single estate (Quinta) in years that are good but not good enough to declare a general Vintage. They are often released when ready to drink.',
+    mentalMapText: 'Portugal -> Port Styles',
+    options: [
+      { id: 'pq96a', text: 'Made every year by every producer', isCorrect: false, feedback: 'Only good years.' },
+      { id: 'pq96b', text: 'A blend of wines from multiple vineyards in a declared vintage year', isCorrect: false, feedback: 'That is Vintage Port.' },
+      { id: 'pq96c', text: 'A wine from a single estate, often produced in years when a general Vintage is not declared', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq96d', text: 'Aged in barrel for 20 years', isCorrect: false, feedback: 'Tawny.' }
+    ]
+  },
+  {
+    id: 'pq_97_st_emilion_classification',
+    tier: Tier.Tier2,
+    category: 'France',
+    region: 'Bordeaux',
+    questionText: 'In Bordeaux, the classification of Saint-Émilion is integrated into the appellation system. The highest rank is:',
+    explanationText: 'The ranking ascends from Grand Cru Classé -> Premier Grand Cru Classé B -> Premier Grand Cru Classé A.',
+    mentalMapText: 'France -> Bordeaux -> Classification',
+    options: [
+      { id: 'pq97a', text: 'Premier Grand Cru Classé A', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq97b', text: 'Premier Grand Cru Classé B', isCorrect: false, feedback: 'Second highest.' },
+      { id: 'pq97c', text: 'Grand Cru Classé', isCorrect: false, feedback: 'Third highest.' },
+      { id: 'pq97d', text: 'Saint-Émilion Grand Cru', isCorrect: false, feedback: 'This is an appellation, not a rank within the classification.' }
+    ]
+  },
+  {
+    id: 'pq_98_vdp_logo',
+    tier: Tier.Tier1,
+    category: 'Germany',
+    region: 'VDP',
+    questionText: 'The VDP logo on a German wine bottle features:',
+    explanationText: 'The VDP (Verband Deutscher Prädikatsweingüter) logo is an eagle bearing a bunch of grapes.',
+    mentalMapText: 'Germany -> Labelling',
+    options: [
+      { id: 'pq98a', text: 'A bear', isCorrect: false, feedback: 'Berlin/Bern symbol.' },
+      { id: 'pq98b', text: 'An eagle bearing a bunch of grapes', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq98c', text: 'A castle', isCorrect: false, feedback: '' },
+      { id: 'pq98d', text: 'A river', isCorrect: false, feedback: '' }
+    ]
+  },
+  {
+    id: 'pq_99_vouvray_sweet',
+    tier: Tier.Tier1,
+    category: 'France',
+    region: 'Loire',
+    questionText: 'Which appellation in the Loire Valley produces sweet wines affected by noble rot from Chenin Blanc?',
+    explanationText: 'Vouvray produces the full range of Chenin styles, including Moelleux (sweet) and Liquoreux (botrytised) wines.',
+    mentalMapText: 'France -> Loire -> Vouvray',
+    options: [
+      { id: 'pq99a', text: 'Vouvray', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq99b', text: 'Sancerre', isCorrect: false, feedback: 'Dry Sauvignon Blanc/Pinot Noir.' },
+      { id: 'pq99c', text: 'Pouilly-Fumé', isCorrect: false, feedback: 'Dry Sauvignon Blanc.' },
+      { id: 'pq99d', text: 'Chinon', isCorrect: false, feedback: 'Red Cabernet Franc.' }
+    ]
+  },
+  {
+    id: 'pq_100_vinho_regional',
+    tier: Tier.Tier1,
+    category: 'Portugal',
+    region: 'Legislation',
+    questionText: '"Vinho Regional" is the Portuguese term for:',
+    explanationText: 'Vinho Regional is the Portuguese equivalent of PGI (Protected Geographical Indication).',
+    mentalMapText: 'Portugal -> Legislation',
+    options: [
+      { id: 'pq100a', text: 'PDO wines', isCorrect: false, feedback: 'DOC (Denominação de Origem Controlada).' },
+      { id: 'pq100b', text: 'PGI wines', isCorrect: true, feedback: 'Correct.' },
+      { id: 'pq100c', text: 'Table wines', isCorrect: false, feedback: 'Vinho de Portugal.' },
+      { id: 'pq100d', text: 'Fortified wines', isCorrect: false, feedback: '' }
+    ]
   }
 ];
