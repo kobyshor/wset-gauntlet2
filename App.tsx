@@ -8,7 +8,7 @@ import { WRITTEN_QUESTIONS } from './data/writtenQuestions';
 import { auth, loadUserData, saveUserData, loginWithGoogle, logoutUser } from './services/firebase';
 import { onAuthStateChanged, User } from 'firebase/auth';
 
-const STORAGE_KEY = 'vintners_gauntlet_v1';
+const STORAGE_KEY = 'cru_mastery_v1';
 
 const App: React.FC = () => {
   const [view, setView] = useState<'dashboard' | 'run' | 'written'>('dashboard');
@@ -176,7 +176,7 @@ const App: React.FC = () => {
   };
 
   if (loadingAuth && Object.keys(progress).length === 0) {
-    return <div className="min-h-screen bg-slate-950 flex items-center justify-center text-amber-500">Loading your vintage...</div>;
+    return <div className="min-h-screen bg-slate-950 flex items-center justify-center text-amber-500 font-bold uppercase tracking-widest">Preparing Cru Mastery...</div>;
   }
 
   return (
@@ -239,13 +239,13 @@ const App: React.FC = () => {
               onClick={resetProgress}
               className="text-xs text-rose-500 underline uppercase tracking-tighter"
             >
-              Reset Knowledge Graph
+              Reset Study Progress
             </button>
             
             <div className="flex items-center gap-2">
                {isDemoMode && (
                 <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest bg-emerald-500/10 px-2 py-1 rounded">
-                  Master Override Active
+                  Demo Mode Active
                 </span>
               )}
             </div>

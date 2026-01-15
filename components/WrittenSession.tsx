@@ -59,7 +59,6 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
     setGrading(prev => ({ ...prev, [currentPart.id]: { score: 0, feedback: "", loading: true } }));
 
     try {
-      // Always use named parameter for apiKey and obtain it directly from process.env.API_KEY
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const prompt = `
         Act as a strict WSET Level 3 Examiner. Grade this Short Written Answer.
@@ -89,12 +88,10 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
         config: { responseMimeType: "application/json" }
       });
 
-      // Use the .text property to access generated content
       const text = response.text || "{}";
       const result = JSON.parse(text);
       setGrading(prev => ({ ...prev, [currentPart.id]: { ...result, loading: false } }));
       
-      // Save progress to the global state
       const percentageScore = Math.round((result.score / currentPart.marks) * 100);
       onSaveProgress(`${question.id}_${currentPart.id}`, percentageScore);
       
@@ -116,6 +113,12 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
     }
   };
 
+  const currentPercentage = useMemo(() => {
+    const result = grading[currentPart.id];
+    if (!result) return 0;
+    return Math.round((result.score / currentPart.marks) * 100);
+  }, [grading, currentPart]);
+
   return (
     <div className="min-h-screen bg-slate-950 flex flex-col max-w-3xl mx-auto border-x border-slate-900 shadow-2xl relative">
       <div className="p-6 bg-slate-900/90 backdrop-blur sticky top-0 z-10 border-b border-slate-800">
@@ -134,9 +137,9 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
         {!showModelAnswer && (
           <div className="flex bg-black/40 p-1 rounded-2xl mb-4 border border-slate-800">
             {[
-              { id: 'wheels', label: 'Helper Wheels', icon: '🚲' },
-              { id: 'balanced', label: 'Balanced', icon: '⚖️' },
-              { id: 'hand', label: 'Free Hand', icon: '✍️' }
+              { id: 'wheels', label: 'Guided Help', icon: '💡' },
+              { id: 'balanced', label: 'Reference', icon: '📖' },
+              { id: 'hand', label: 'Free Text', icon: '✍️' }
             ].map(lv => (
               <button
                 key={lv.id}
@@ -177,7 +180,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
             <div className="space-y-6">
               <div className="min-h-[140px] p-6 bg-slate-900/50 border-2 border-dashed border-slate-800 rounded-[2rem] flex flex-wrap gap-3 items-start content-start">
                 {selectedBlocks.length === 0 ? (
-                  <span className="text-slate-600 italic serif text-lg p-2">Click blocks below to build your logic chain...</span>
+                  <span className="text-slate-600 italic serif text-lg p-2">Click blocks below to build your answer...</span>
                 ) : (
                   selectedBlocks.map((block, i) => (
                     <div key={i} className="flex items-center gap-2 animate-in fade-in zoom-in duration-300">
@@ -200,7 +203,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
               <div className="space-y-6">
                 <div className="space-y-3">
                   <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-amber-500"></span> 1. LOGIC BRIDGES (KEY TO EXPLAIN MARKS)
+                    <span className="w-2 h-2 rounded-full bg-amber-500"></span> 1. EXPLANATION CONNECTORS
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {bridgeBlocks.map(block => (
@@ -217,7 +220,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
 
                 <div className="space-y-3">
                   <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-widest flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-blue-500"></span> 2. SYLLABUS FACTS (IDENTIFY & DESCRIBE)
+                    <span className="w-2 h-2 rounded-full bg-blue-500"></span> 2. KEY SYLLABUS FACTS
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {currentPart.logicBlocks?.map(block => (
@@ -239,7 +242,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
                 value={currentAnswer}
                 onChange={(e) => setUserAnswers({ ...userAnswers, [currentPart.id]: e.target.value })}
                 disabled={showModelAnswer}
-                placeholder="Type your response... use the blocks below for inspiration."
+                placeholder="Type your response... use the facts below for reference."
                 className="w-full h-48 bg-slate-900/50 border-2 border-slate-800 rounded-[2rem] p-8 text-lg text-slate-200 focus:border-amber-500/50 outline-none m3-transition resize-none serif leading-relaxed"
               />
               <div className="flex flex-wrap gap-2 opacity-60">
@@ -254,7 +257,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
                 value={currentAnswer}
                 onChange={(e) => setUserAnswers({ ...userAnswers, [currentPart.id]: e.target.value })}
                 disabled={showModelAnswer}
-                placeholder="Free hand mode: Structure your Identifying, Describing, and Explaining."
+                placeholder="Write your answer. Remember to Identify, Describe, and Explain."
                 className="w-full h-80 bg-slate-900/50 border-2 border-slate-800 rounded-[2rem] p-8 text-lg text-slate-200 focus:border-amber-500/50 outline-none m3-transition resize-none serif leading-relaxed"
               />
             </div>
@@ -263,7 +266,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
           <div className="bg-slate-900/80 p-5 rounded-2xl border border-slate-800/50">
             <div className="flex justify-between items-center mb-3">
               <h4 className="text-[10px] text-slate-500 font-bold uppercase tracking-[0.2em] flex items-center">
-                <span className="mr-3 h-px w-6 bg-slate-800"></span> Logic Bridge Tracker
+                <span className="mr-3 h-px w-6 bg-slate-800"></span> Word Connection Tracker
               </h4>
               <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${usedLinkingWords.length > 0 ? 'bg-emerald-500/20 text-emerald-400' : 'bg-slate-800 text-slate-500'}`}>
                 {usedLinkingWords.length} Detected
@@ -291,14 +294,14 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
 
         {showModelAnswer && (
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700 space-y-10">
-             <div className="bg-gradient-to-br from-purple-900/20 to-slate-900 border border-purple-500/30 rounded-[3rem] p-10 relative overflow-hidden group">
-                <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                   <span className="text-8xl font-black text-white">👻</span>
+             <div className="bg-gradient-to-br from-cyan-900/20 to-slate-900 border border-cyan-500/30 rounded-[3rem] p-10 relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-10 opacity-10 group-hover:opacity-20 transition-opacity">
+                   <svg className="w-24 h-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                 </div>
                 <div className="relative z-10">
-                   <h3 className="text-purple-400 font-black text-[11px] uppercase tracking-[0.4em] mb-4">Lucy's Distinction Log</h3>
+                   <h3 className="text-cyan-400 font-black text-[11px] uppercase tracking-[0.4em] mb-4">EXAMINER ANALYSIS</h3>
                    <p className="text-slate-300 text-xl leading-relaxed serif italic">
-                      "I used <span className="text-amber-400 font-bold">{usedLinkingWords.length}</span> linking words in my final draft. In this prompt, I made sure to connect the {currentPart.logicBlocks?.[0]?.text || 'primary factor'} directly to the {currentPart.logicBlocks?.[currentPart.logicBlocks.length-1]?.text || 'style output'}. How does your logic chain compare to mine?"
+                      High marks require linking the main factor to the final outcome. Your response used <span className="text-amber-400 font-bold">{usedLinkingWords.length}</span> connecting words. WSET markers award marks for showing the cause-and-effect relationship.
                    </p>
                 </div>
              </div>
@@ -306,7 +309,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
             {grading[currentPart.id]?.loading ? (
               <div className="bg-slate-900 p-10 rounded-[2.5rem] border border-slate-800 flex flex-col items-center gap-5">
                 <div className="h-12 w-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-xs font-black text-slate-500 uppercase tracking-[0.4em]">Examiner auditing logic...</p>
+                <p className="text-xs font-black text-slate-500 uppercase tracking-[0.4em]">Examiner is marking your answer...</p>
               </div>
             ) : (
               <div className="bg-slate-900 border border-slate-800 rounded-[3rem] p-10 shadow-2xl space-y-8 relative overflow-hidden">
@@ -315,8 +318,19 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
                 </div>
                 <div className="relative z-10">
                   <div className="flex justify-between items-center mb-6">
-                    <h3 className="text-amber-500 font-black text-[11px] uppercase tracking-[0.3em]">EVALUATION REPORT</h3>
-                    <div className="text-4xl font-black text-white tabular-nums serif italic">{grading[currentPart.id]?.score} <span className="text-slate-700 text-xl font-medium">/ {currentPart.marks}</span></div>
+                    <h3 className="text-amber-500 font-black text-[11px] uppercase tracking-[0.3em]">MARKING REPORT</h3>
+                    <div className="text-4xl font-black text-white tabular-nums serif italic">
+                      {grading[currentPart.id]?.score} 
+                      <span className="text-slate-700 text-xl font-medium"> / {currentPart.marks}</span>
+                      <span className={`ml-4 text-xs px-2 py-1 rounded uppercase tracking-widest align-middle ${
+                        currentPercentage >= 85 ? 'bg-cyan-500/20 text-cyan-400' :
+                        currentPercentage >= 70 ? 'bg-amber-500/20 text-amber-400' :
+                        currentPercentage >= 55 ? 'bg-blue-500/20 text-blue-400' :
+                        'bg-rose-500/20 text-rose-400'
+                      }`}>
+                        {currentPercentage >= 85 ? 'Distinction' : currentPercentage >= 70 ? 'Merit' : currentPercentage >= 55 ? 'Pass' : 'Below Pass'}
+                      </span>
+                    </div>
                   </div>
                   <p className="text-slate-100 text-lg leading-relaxed italic border-l-4 border-amber-500 pl-8 serif py-2">{grading[currentPart.id]?.feedback}</p>
                 </div>
@@ -324,7 +338,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
             )}
 
             <div className="bg-slate-900 border border-slate-800 rounded-[3rem] p-10 space-y-8">
-              <h3 className="text-emerald-500 font-black text-[11px] uppercase tracking-[0.3em]">DISTINCTION MODEL ANSWER</h3>
+              <h3 className="text-emerald-500 font-black text-[11px] uppercase tracking-[0.3em]">IDEAL EXAM ANSWER</h3>
               <p className="text-slate-100 text-xl md:text-2xl leading-relaxed serif italic tracking-tight">{currentPart.modelAnswer}</p>
             </div>
           </div>
@@ -346,7 +360,7 @@ export const WrittenSession: React.FC<WrittenSessionProps> = ({ question, onExit
             onClick={nextPart}
             className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-6 rounded-[2rem] text-xl shadow-2xl m3-transition active:scale-[0.98] flex items-center justify-center gap-4"
           >
-            <span>{currentPartIndex === question.parts.length - 1 ? 'CONCLUDE SESSION' : 'PROCEED TO NEXT PART'}</span>
+            <span>{currentPartIndex === question.parts.length - 1 ? 'FINISH PRACTICE' : 'PROCEED TO NEXT PART'}</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
           </button>
         )}

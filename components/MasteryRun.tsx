@@ -48,7 +48,6 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
     setIsAnswered(true);
   };
 
-  // Fix: Add handleNext to move to the next question or complete the run
   const handleNext = () => {
     if (currentIndex < sessionQuestions.length - 1) {
       setCurrentIndex(prev => prev + 1);
@@ -61,7 +60,6 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
 
   const handleFinalize = () => {
     const updatedProgress = { ...progress };
-    // Fixed: Explicitly typed entries to prevent 'unknown' inference error in some TS environments
     (Object.entries(sessionResults) as [string, { isCorrect: boolean; selectedOptionId: string }][]).forEach(([qId, result]) => {
       const existing = updatedProgress[qId] || {
         questionId: qId,
@@ -119,7 +117,6 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
   const runStats = useMemo(() => {
     if (!isRunComplete) return null;
     const total = sessionQuestions.length;
-    // Fixed: Explicitly typed values to prevent 'unknown' inference error when mapping session results
     const correctCount = (Object.values(sessionResults) as { isCorrect: boolean; selectedOptionId: string }[]).filter(r => r.isCorrect).length;
     const percentage = Math.round((correctCount / total) * 100);
     
@@ -141,7 +138,7 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-6 text-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 mb-6"></div>
-        <h2 className="text-xl font-medium text-slate-200 tracking-tight serif">Assembling Your Gauntlet...</h2>
+        <h2 className="text-xl font-medium text-slate-200 tracking-tight serif">Setting up Practice Session...</h2>
         <button onClick={onExit} className="mt-8 text-slate-600 hover:text-slate-400 text-xs font-bold uppercase tracking-widest py-2 px-4 border border-slate-800 rounded-lg m3-transition">Cancel</button>
       </div>
     );
@@ -151,9 +148,9 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col max-w-2xl mx-auto border-x border-slate-900 shadow-2xl relative p-6 pb-32">
         <header className="text-center py-12 space-y-4">
-          <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Gauntlet Performance Log</h2>
+          <h2 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.4em]">Session Results</h2>
           <div className={`text-6xl font-black serif italic tracking-tighter ${runStats.color}`}>{runStats.grade}</div>
-          <div className="text-slate-200 text-xl font-medium tracking-tight">You secured {runStats.correctCount} of {runStats.total} protocols ({runStats.percentage}%)</div>
+          <div className="text-slate-200 text-xl font-medium tracking-tight">You answered {runStats.correctCount} of {runStats.total} correctly ({runStats.percentage}%)</div>
         </header>
 
         <div className="grid grid-cols-2 gap-4 mb-10">
@@ -162,7 +159,7 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
             <div className="text-3xl font-black text-white">{runStats.percentage}%</div>
           </div>
           <div className="bg-slate-900 border border-slate-800 p-6 rounded-3xl text-center space-y-2">
-            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Errors</span>
+            <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Mistakes</span>
             <div className="text-3xl font-black text-rose-500">{runStats.incorrectQuestions.length}</div>
           </div>
         </div>
@@ -170,13 +167,13 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
         {runStats.incorrectQuestions.length > 0 ? (
           <div className="space-y-10">
             <section className="space-y-4">
-              <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.4em]">Critical Knowledge Gaps</h3>
+              <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.4em]">Review Your Mistakes</h3>
               <div className="space-y-3">
                 {runStats.incorrectQuestions.map(q => (
                   <div key={q.id} className="bg-slate-900/40 border border-slate-800 p-6 rounded-3xl space-y-3">
                     <div className="flex justify-between items-start">
                        <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest">{q.region}</span>
-                       <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">T{q.tier}</span>
+                       <span className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Tier {q.tier}</span>
                     </div>
                     <p className="text-slate-300 font-medium leading-snug">{q.questionText}</p>
                     <div className="pt-3 border-t border-slate-800/50">
@@ -188,7 +185,7 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
             </section>
 
             <section className="space-y-4">
-              <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.4em]">Recommended Study Focus</h3>
+              <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.4em]">Recommended Study Topics</h3>
               <div className="flex flex-wrap gap-2">
                 {runStats.focusRegions.map(r => (
                   <span key={r} className="px-4 py-2 bg-rose-500/10 border border-rose-500/30 text-rose-400 rounded-xl text-xs font-bold uppercase tracking-widest">Review {r}</span>
@@ -202,7 +199,7 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
         ) : (
           <div className="text-center py-10 space-y-4">
              <div className="text-5xl">🏆</div>
-             <p className="text-slate-400 serif italic text-lg">Flawless execution. Your logic chain is consistent with the primary text.</p>
+             <p className="text-slate-400 serif italic text-lg">Perfect Session. You have full command over these topics.</p>
           </div>
         )}
 
@@ -211,7 +208,7 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
             onClick={handleFinalize}
             className={`w-full font-bold py-6 rounded-[2rem] text-xl shadow-2xl m3-transition flex items-center justify-center gap-4 ${runStats.percentage >= 85 ? 'bg-cyan-600 hover:bg-cyan-500' : 'bg-amber-600 hover:bg-amber-500'} text-white`}
           >
-            <span>SYNCHRONIZE & EXIT</span>
+            <span>SAVE & EXIT</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
           </button>
         </div>
@@ -219,7 +216,6 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
     );
   }
 
-  const currentOptionObj = currentQuestion.options.find(o => o.id === selectedOption);
   const progressPercent = ((currentIndex + 1) / sessionQuestions.length) * 100;
 
   return (
@@ -227,11 +223,11 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
       {showAbandonConfirm && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-black/80 backdrop-blur-sm animate-in fade-in">
           <div className="bg-slate-900 p-8 rounded-[2rem] border border-slate-800 shadow-2xl max-w-sm w-full text-center">
-            <h3 className="text-2xl font-bold text-white mb-3 serif">Abandon Run?</h3>
+            <h3 className="text-2xl font-bold text-white mb-3 serif">End Session?</h3>
             <p className="text-slate-400 mb-8 text-sm leading-relaxed">Your progress in this current session will be lost.</p>
             <div className="flex flex-col gap-3">
-              <button onClick={confirmAbandon} className="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-4 rounded-2xl m3-transition shadow-lg">YES, ABANDON</button>
-              <button onClick={cancelAbandon} className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-4 rounded-2xl m3-transition">STAY IN RUN</button>
+              <button onClick={confirmAbandon} className="w-full bg-rose-600 hover:bg-rose-500 text-white font-bold py-4 rounded-2xl m3-transition shadow-lg">YES, END SESSION</button>
+              <button onClick={cancelAbandon} className="w-full bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-4 rounded-2xl m3-transition">CONTINUE</button>
             </div>
           </div>
         </div>
@@ -239,8 +235,8 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
 
       <div className="p-4 bg-slate-900/90 backdrop-blur sticky top-0 z-10 border-b border-slate-800">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-xs font-bold text-amber-500 uppercase tracking-widest">Protocol {currentIndex + 1} / {sessionQuestions.length}</span>
-          <button onClick={handleAbandonRequest} className="text-slate-500 hover:text-rose-500 text-xs font-bold uppercase tracking-wider py-2 px-3 rounded-lg">Abandon</button>
+          <span className="text-xs font-bold text-amber-500 uppercase tracking-widest">Question {currentIndex + 1} / {sessionQuestions.length}</span>
+          <button onClick={handleAbandonRequest} className="text-slate-500 hover:text-rose-500 text-xs font-bold uppercase tracking-wider py-2 px-3 rounded-lg">Exit</button>
         </div>
         <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
           <div className="h-full bg-amber-500 transition-all duration-500 ease-out" style={{ width: `${progressPercent}%` }}></div>
@@ -255,10 +251,10 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
             currentQuestion.tier === Tier.Tier2 ? 'bg-blue-600 text-white' :
             'bg-slate-700 text-slate-300'
           }`}>
-            Tier {currentQuestion.tier}: {
-              currentQuestion.tier === 4 ? 'EXPERT' :
-              currentQuestion.tier === 3 ? 'DISTINCTION' :
-              currentQuestion.tier === 2 ? 'MERIT' : 'PASS'
+            {
+              currentQuestion.tier === 4 ? 'EXPERT TIER' :
+              currentQuestion.tier === 3 ? 'DISTINCTION TIER' :
+              currentQuestion.tier === 2 ? 'MERIT TIER' : 'PASS TIER'
             }
           </span>
           <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.1em]">{currentQuestion.category}</span>
@@ -289,19 +285,19 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
 
         {isAnswered && (
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-8 pt-4">
-            <div className={`p-6 rounded-[1.5rem] border-l-4 ${currentOptionObj?.isCorrect ? 'bg-emerald-950/30 border-emerald-500 text-emerald-50' : 'bg-rose-950/30 border-rose-500 text-rose-50'}`}>
-               <h4 className="font-bold text-[11px] uppercase mb-2 tracking-[0.15em] opacity-70">{currentOptionObj?.isCorrect ? 'VALID LOGIC' : 'CRITICAL ERROR'}</h4>
-               <p className="text-[16px] leading-relaxed font-medium">{currentOptionObj?.feedback}</p>
+            <div className={`p-6 rounded-[1.5rem] border-l-4 ${currentQuestion.options.find(o => o.id === selectedOption)?.isCorrect ? 'bg-emerald-950/30 border-emerald-500 text-emerald-50' : 'bg-rose-950/30 border-rose-500 text-rose-50'}`}>
+               <h4 className="font-bold text-[11px] uppercase mb-2 tracking-[0.15em] opacity-70">{currentQuestion.options.find(o => o.id === selectedOption)?.isCorrect ? 'CORRECT' : 'INCORRECT'}</h4>
+               <p className="text-[16px] leading-relaxed font-medium">{currentQuestion.options.find(o => o.id === selectedOption)?.feedback}</p>
             </div>
 
             <div className="bg-slate-900/60 p-8 rounded-[2rem] border border-slate-800 shadow-sm relative overflow-hidden">
                <h4 className="font-bold text-amber-500 text-[10px] uppercase mb-5 tracking-[0.25em] flex items-center">
-                <span className="mr-4 h-px w-10 bg-amber-500/20"></span> THE BOOK PROTOCOL
+                <span className="mr-4 h-px w-10 bg-amber-500/20"></span> THE SYLLABUS FACT
                </h4>
                <p className="text-slate-100 leading-relaxed mb-8 text-xl md:text-2xl serif italic tracking-tight" dangerouslySetInnerHTML={{ __html: formatExplanation(currentQuestion.explanationText) }} />
                <div className="mt-6 pt-6 border-t border-slate-800/60">
                   <h4 className="font-bold text-slate-500 text-[10px] uppercase mb-4 tracking-[0.25em] flex items-center">
-                    <span className="mr-4 h-px w-10 bg-slate-700/50"></span> GEOGRAPHIC ANCHOR
+                    <span className="mr-4 h-px w-10 bg-slate-700/50"></span> MAP ANCHOR
                   </h4>
                   <div className="text-[15px] font-medium text-amber-500/90 bg-black/40 p-5 rounded-2xl border border-amber-500/10 tracking-tight flex items-center gap-3">
                     <span className="text-xl">📍</span>
@@ -315,10 +311,10 @@ export const MasteryRun: React.FC<MasteryRunProps> = ({ progress, onComplete, on
 
       <div className="p-6 bg-slate-900/95 backdrop-blur-xl border-t border-slate-800 fixed bottom-0 left-0 right-0 max-w-2xl mx-auto z-20">
         {!isAnswered ? (
-          <button onClick={handleSubmit} disabled={!selectedOption} className="w-full bg-amber-600 disabled:bg-slate-800 disabled:text-slate-600 text-white font-bold py-5 rounded-[1.5rem] text-xl shadow-2xl m3-transition hover:bg-amber-500">CONFIRM LOGIC</button>
+          <button onClick={handleSubmit} disabled={!selectedOption} className="w-full bg-amber-600 disabled:bg-slate-800 disabled:text-slate-600 text-white font-bold py-5 rounded-[1.5rem] text-xl shadow-2xl m3-transition hover:bg-amber-500">CHECK ANSWER</button>
         ) : (
           <button onClick={handleNext} className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-5 rounded-[1.5rem] text-xl shadow-2xl m3-transition">
-            {currentIndex === sessionQuestions.length - 1 ? 'CONCLUDE RUN' : 'NEXT PROTOCOL'}
+            {currentIndex === sessionQuestions.length - 1 ? 'FINISH SESSION' : 'NEXT QUESTION'}
           </button>
         )}
       </div>

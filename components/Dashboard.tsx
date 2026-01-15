@@ -55,6 +55,14 @@ export const Dashboard: React.FC<DashboardProps> = ({
     };
   }, [progress]);
 
+  const currentGrade = useMemo(() => {
+    const p = stats.coveragePercentage;
+    if (p >= 85) return { label: 'DISTINCTION', color: 'text-cyan-400' };
+    if (p >= 70) return { label: 'MERIT', color: 'text-amber-400' };
+    if (p >= 55) return { label: 'PASS', color: 'text-blue-400' };
+    return { label: 'UNCLASSIFIED', color: 'text-slate-500' };
+  }, [stats.coveragePercentage]);
+
   const writtenMastery = useMemo(() => {
     const totalParts = WRITTEN_QUESTIONS.reduce((a, b) => a + b.parts.length, 0);
     const completedParts = Object.keys(progress).filter(id => id.includes('swq_') && progress[id].isCorrect).length;
@@ -124,10 +132,10 @@ export const Dashboard: React.FC<DashboardProps> = ({
               <div className="bg-white border-[12px] border-double border-slate-200 rounded-3xl p-12 text-center space-y-8 relative overflow-hidden">
                  <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/pinstriped-suit.png')]"></div>
                  <div className="relative z-10">
-                    <span className="text-slate-400 text-[11px] font-black uppercase tracking-[0.5em]">The Vintner Guild</span>
-                    <h3 className="text-5xl font-black text-slate-900 serif italic mt-4 mb-2">Certification of Mastery</h3>
+                    <span className="text-slate-400 text-[11px] font-black uppercase tracking-[0.5em]">The Master Vintner</span>
+                    <h3 className="text-5xl font-black text-slate-900 serif italic mt-4 mb-2">Academic Mastery</h3>
                     <p className="text-slate-500 font-medium tracking-tight border-t border-slate-100 pt-8 max-w-md mx-auto">
-                       This acknowledges that the candidate has successfully traversed the Vintner's Gauntlet, achieving Distinction-level logic across all 233+ syllabus data points.
+                       This acknowledges the successful completion of the Cru Mastery program, achieving Distinction-level knowledge across the entire WSET Level 3 syllabus.
                     </p>
                     <div className="my-12 flex justify-center">
                        <div className="w-24 h-24 bg-amber-500 rounded-full flex items-center justify-center shadow-xl ring-8 ring-amber-100 animate-bounce">
@@ -137,7 +145,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                     <div className="flex justify-between items-end border-t border-slate-100 pt-8 opacity-60">
                        <div className="text-left">
                           <span className="block text-[10px] uppercase font-bold text-slate-400">Status</span>
-                          <span className="text-slate-800 font-black text-sm uppercase">Exam Ready</span>
+                          <span className="text-slate-800 font-black text-sm uppercase">Course Complete</span>
                        </div>
                        <div className="text-right">
                           <span className="block text-[10px] uppercase font-bold text-slate-400">Date</span>
@@ -150,7 +158,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                  onClick={() => setShowCertificate(false)}
                  className="w-full py-6 text-white bg-slate-800 hover:bg-slate-700 font-bold rounded-b-3xl transition-colors uppercase tracking-[0.2em] text-xs"
               >
-                 Return to Hall of Fame
+                 Return to Dashboard
               </button>
            </div>
         </div>
@@ -164,11 +172,11 @@ export const Dashboard: React.FC<DashboardProps> = ({
           onClick={handleSecretClick}
           className={`text-5xl md:text-7xl font-bold mb-4 tracking-tighter serif cursor-pointer select-none transition-all duration-700 ${isUltimateMaster ? 'text-white' : 'text-amber-500'}`}
         >
-          {isUltimateMaster ? "GAUNTLET CONQUERED" : "VINTNER'S GAUNTLET"}
+          {isUltimateMaster ? "CRU MASTER" : "CRU MASTERY"}
           {isDemoMode && <span className="text-[10px] align-middle ml-2 text-emerald-500 font-black animate-pulse">DEV</span>}
         </h1>
         <p className={`text-[11px] uppercase tracking-[0.4em] font-bold transition-colors ${isUltimateMaster ? 'text-cyan-400' : 'text-slate-500'}`}>
-          {isUltimateMaster ? "VINTNER ELITE STATUS ACHIEVED" : "WSET LEVEL 3 MASTERY ENGINE"}
+          {isUltimateMaster ? "ELITE CANDIDATE STATUS ACHIEVED" : "WSET LEVEL 3 EXAM PREP"}
         </p>
       </header>
 
@@ -182,7 +190,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1 space-y-4 text-center md:text-left">
               <h2 className={`text-[12px] font-bold uppercase tracking-[0.25em] transition-colors ${isUltimateMaster ? 'text-cyan-400' : 'text-slate-400'}`}>
-                {isUltimateMaster ? "Ultimate Logic Secured" : "Protocol Coverage"}
+                {isUltimateMaster ? "Course Mastered" : "Syllabus Coverage"}
               </h2>
               <div className="text-8xl font-black text-white tracking-tighter serif">{stats.coveragePercentage}%</div>
             </div>
@@ -193,15 +201,27 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </div>
           </div>
 
-          <div className="space-y-4 bg-black/40 p-6 rounded-[2rem] border border-white/5 shadow-inner">
-             <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
-                <span className={isUltimateMaster ? 'text-cyan-400' : 'text-amber-500'}>Your Progress</span>
-                <span className="text-purple-400">{isUltimateMaster ? "Proctor's Approval ✓" : "Lucy (Ghost) 75% 👻"}</span>
+          <div className="space-y-4 bg-black/40 p-8 rounded-[2rem] border border-white/5 shadow-inner relative">
+             <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest mb-2">
+                <span className={isUltimateMaster ? 'text-cyan-400' : 'text-amber-500'}>Current Mastery Level</span>
+                <span className={currentGrade.color}>{currentGrade.label} Grade</span>
              </div>
+             
+             {/* Threshold Markers */}
+             <div className="absolute top-[52px] left-8 right-8 h-4 pointer-events-none z-20">
+                {[
+                  { p: 55, label: 'Pass' },
+                  { p: 70, label: 'Merit' },
+                  { p: 85, label: 'Dist.' }
+                ].map(mark => (
+                  <div key={mark.p} className="absolute h-full flex flex-col items-center" style={{ left: `${mark.p}%` }}>
+                    <div className="w-0.5 h-full bg-slate-600/50"></div>
+                    <span className="text-[8px] font-black text-slate-500 mt-1 uppercase tracking-tighter">{mark.label}</span>
+                  </div>
+                ))}
+             </div>
+
              <div className="h-4 w-full bg-slate-800 rounded-full relative overflow-hidden shadow-inner">
-                {!isUltimateMaster && (
-                  <div className="absolute top-0 left-0 h-full bg-purple-500/20 w-[75%] transition-all duration-1000 border-r-2 border-purple-500 animate-pulse"></div>
-                )}
                 <div 
                   className={`absolute top-0 left-0 h-full transition-all duration-1000 ${isUltimateMaster ? 'bg-cyan-500 shadow-[0_0_20px_rgba(34,211,238,0.8)]' : 'bg-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.5)]'}`} 
                   style={{ width: `${stats.coveragePercentage}%` }}
@@ -211,9 +231,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </div>
 
-      {/* Syllabus Scaffolding (Tier Breakdown) */}
+      {/* Tier Breakdown */}
       <section className="space-y-8">
-        <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.5em]">Syllabus Scaffolding</h3>
+        <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.5em]">Exam Tier Mastery</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {tierStats.map(tier => (
             <div key={tier.tier} className="bg-slate-900 border border-slate-800 p-6 rounded-3xl space-y-4 relative overflow-hidden group hover:border-amber-500/30 transition-colors">
@@ -235,9 +255,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </section>
 
-      {/* Knowledge Atlas (Region Heatmap) */}
+      {/* Region Heatmap */}
       <section className="space-y-8">
-        <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.5em]">Knowledge Atlas</h3>
+        <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.5em]">Regional Knowledge</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {Object.entries(stats.regionHeatmap).map(([region, data]) => {
             const perc = Math.round((data.correct / data.total) * 100);
@@ -262,12 +282,12 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </section>
 
-      {/* Written Section with Marks */}
+      {/* Written Section */}
       <section className="space-y-8">
         <div className="flex items-center justify-between">
-           <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.5em]">Written Logic Gauntlet</h3>
+           <h3 className="text-slate-500 text-[11px] font-black uppercase tracking-[0.5em]">Written Exam Practice</h3>
            <span className={`text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-widest border ${writtenMastery.isPerfect ? 'bg-cyan-500/10 text-cyan-500 border-cyan-500/20' : 'bg-amber-500/10 text-amber-500 border-amber-500/20'}`}>
-              {writtenMastery.completed} / {writtenMastery.total} Secured
+              {writtenMastery.completed} / {writtenMastery.total} Parts Passed
            </span>
         </div>
         <div className="grid grid-cols-1 gap-4">
@@ -283,7 +303,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <div className="space-y-2">
                   <span className={`text-[10px] font-bold uppercase tracking-widest ${isCompleted ? 'text-cyan-500' : 'text-slate-500'}`}>{wq.category}</span>
                   <h4 className={`text-xl font-bold serif group-hover:text-white transition-colors ${isCompleted ? 'text-cyan-100' : 'text-slate-200'}`}>{wq.title}</h4>
-                  <p className="text-slate-500 text-sm font-medium">{partMasteryCount}/{wq.parts.length} Distinction Logic Chains</p>
+                  <p className="text-slate-500 text-sm font-medium">{partMasteryCount}/{wq.parts.length} Distinction Answers</p>
                 </div>
                 <div className={`p-4 rounded-3xl transition-all ${isCompleted ? 'bg-cyan-500 text-slate-950' : 'bg-slate-800 text-amber-500 group-hover:bg-amber-600 group-hover:text-white'}`}>
                   {isCompleted ? (
@@ -305,9 +325,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
             onClick={onStartRun}
             className={`w-full font-bold py-7 rounded-[2rem] text-2xl shadow-2xl m3-transition transform hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-6 ${isUltimateMaster ? 'bg-cyan-600 hover:bg-cyan-500 text-white' : 'bg-amber-600 hover:bg-amber-500 text-white'}`}
           >
-            <span className="serif italic">{isUltimateMaster ? "START MOCK EXAM" : "ENTER MCQ GAUNTLET"}</span>
+            <span className="serif italic">{isUltimateMaster ? "MOCK EXAM READY" : "PRACTICE QUESTIONS"}</span>
             <span className="bg-black/30 px-5 py-2 rounded-2xl text-[14px] font-black tracking-tight uppercase">
-              {isUltimateMaster ? "50 Questions" : "20 Protocols"}
+              {isUltimateMaster ? "50 Questions" : "20 Mixed Questions"}
             </span>
           </button>
         </div>
@@ -316,7 +336,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
   );
 };
 
-// Fixed the missing "React" namespace error by importing React at the top.
 const MiniStat: React.FC<{ label: string; value: number; total: number; isCyan?: boolean }> = ({ label, value, total, isCyan }) => (
   <div className={`p-6 rounded-[2rem] border text-center min-w-[120px] shadow-inner transition-all duration-1000 ${isCyan ? 'bg-cyan-950/20 border-cyan-500/20' : 'bg-black/30 border-white/5'}`}>
     <div className={`text-3xl font-black tracking-tighter serif ${isCyan ? 'text-cyan-400' : 'text-white'}`}>{value}<span className="text-slate-600 text-sm font-medium ml-0.5">/{total}</span></div>
